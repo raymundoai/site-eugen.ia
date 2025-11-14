@@ -73,7 +73,7 @@ const Home = () => {
                 </Button>
               </Link>
               <Link to="/servicos">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-primary/50 hover:bg-primary/10">
+                <Button size="lg" variant="outlineGold" className="text-lg px-8 py-6">
                   Conheça Nossos Serviços
                 </Button>
               </Link>
