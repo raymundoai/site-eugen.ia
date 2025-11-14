@@ -55,7 +55,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Link to="/contato">
-              <Button className="bg-gradient-primary border-0 hover:opacity-90 glow text-primary-foreground">
+              <Button className="bg-gradient-primary border-0 hover:opacity-90 glow text-primary">
                 Solicitar Diagnóstico
               </Button>
             </Link>
@@ -87,7 +87,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <Link to="/contato" className="px-4" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button className="w-full bg-gradient-primary border-0 hover:opacity-90 text-primary-foreground">
+                <Button className="w-full bg-gradient-primary border-0 hover:opacity-90 text-primary">
                   Solicitar Diagnóstico
                 </Button>
               </Link>

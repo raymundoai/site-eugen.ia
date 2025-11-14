@@ -149,7 +149,7 @@ const Services = () => {
               Solicite um diagnóstico estratégico gratuito e descubra qual solução é ideal para o seu negócio.
             </p>
             <Link to="/contato">
-              <Button size="lg" className="bg-gradient-primary border-0 hover:opacity-90 glow text-lg px-8 py-6">
+              <Button size="lg" className="bg-gradient-primary border-0 hover:opacity-90 glow text-lg px-8 py-6 text-primary">
                 Solicitar Diagnóstico Gratuito
               </Button>
             </Link>

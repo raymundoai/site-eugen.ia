@@ -67,7 +67,7 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contato">
-                <Button size="lg" className="bg-gradient-primary border-0 hover:opacity-90 glow text-lg px-8 py-6 text-primary-foreground">
+                <Button size="lg" className="bg-gradient-primary border-0 hover:opacity-90 glow text-lg px-8 py-6 text-primary">
                   Solicitar Diagnóstico Gratuito
                   <ArrowRight className="ml-2" />
                 </Button>
@@ -203,7 +203,7 @@ const Home = () => {
                 Solicite um diagnóstico estratégico gratuito e descubra como a IA pode multiplicar seus resultados.
               </p>
               <Link to="/contato">
-                <Button size="lg" className="bg-gradient-primary border-0 hover:opacity-90 glow text-lg px-8 py-6 text-primary-foreground">
+                <Button size="lg" className="bg-gradient-primary border-0 hover:opacity-90 glow text-lg px-8 py-6 text-primary">
                   Solicitar Diagnóstico Gratuito
                   <ArrowRight className="ml-2" />
                 </Button>
