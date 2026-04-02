@@ -1,0 +1,7 @@
+.env
+.env.*
+node_modules/
+dist/
+SITE_EUGENIA/node_modules/
+SITE_EUGENIA/dist/
+SITE_EUGENIA/.env.local
