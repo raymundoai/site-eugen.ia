@@ -32,6 +32,6 @@ export function buildChatPayload({ sessionId, route, message, lead, conversation
     intent: intent || 'diagnostico',
     consent_lgpd: Boolean(consent),
     channel: 'site',
-    widget_variant: widgetVariant || 'home_embedded',
+    widget_variant: widgetVariant || 'embedded',
   }
 }

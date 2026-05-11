@@ -1,6 +1,6 @@
 import { resolveServiceIcon } from '../../utils/serviceIcons'
 
-export function ServiceCard({ title, promise, bullets, icon, index }) {
+export function ServiceCard({ title, promise, details, bullets, icon, index }) {
   const Icon = resolveServiceIcon(icon)
 
   return (
@@ -10,6 +10,7 @@ export function ServiceCard({ title, promise, bullets, icon, index }) {
       </span>
       <h3>{title}</h3>
       <p>{promise}</p>
+      {details ? <p>{details}</p> : null}
       <ul>
         {bullets.map((bullet) => (
           <li key={bullet}>{bullet}</li>

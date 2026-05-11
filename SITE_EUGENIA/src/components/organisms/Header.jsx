@@ -27,7 +27,7 @@ export function Header() {
         <div className="header-actions">
           <ThemeToggle />
           <Button as={Link} to="/contato" variant="glass" data-cursor="action">
-            Diagnóstico gratuito
+            Agendar diagnóstico
           </Button>
           <button
             type="button"
@@ -47,7 +47,7 @@ export function Header() {
             <NavItem key={item.path} item={item} onClick={() => setMobileOpen(false)} />
           ))}
           <Button as={Link} to="/contato" onClick={() => setMobileOpen(false)}>
-            Diagnóstico gratuito
+            Agendar diagnóstico
           </Button>
         </div>
       </div>

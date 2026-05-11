@@ -3,20 +3,22 @@ import { ServiceCard } from '../molecules/ServiceCard'
 
 export function ServicesGrid() {
   return (
-    <section className="section section-services" aria-labelledby="servicos-title">
+    <section className="section section-services" aria-labelledby="construimos-title">
       <div className="container">
         <div className="section-intro" data-reveal>
-          <p className="kicker">Serviços</p>
-          <h2 id="servicos-title">O que a Eugen.IA constrói para o seu e-commerce</h2>
+          <p className="kicker">O que construímos</p>
+          <h2 id="construimos-title">O que a Eugen.IA constrói para a sua operação</h2>
           <p>
-            Mapeamos gargalos reais e construímos soluções de IA para reduzir retrabalho, integrar operação e escalar com previsibilidade.
+            Soluções sob medida para tirar peso da rotina, conectar sistemas e liberar tempo para decisão real.
           </p>
         </div>
 
-        <div className="services-grid">
-          {services.map((service, index) => (
-            <ServiceCard key={service.title} {...service} index={index} />
-          ))}
+        <div className="card-rail-viewport" data-card-rail-viewport>
+          <div className="services-grid card-rail" data-card-rail>
+            {services.map((service, index) => (
+              <ServiceCard key={service.title} {...service} index={index} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

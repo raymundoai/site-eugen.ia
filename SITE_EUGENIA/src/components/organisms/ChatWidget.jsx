@@ -23,7 +23,7 @@ function createMessage(role, message) {
 function getWidgetVariant(floating, pathname) {
   if (floating) return 'floating'
   if (pathname === '/contato') return 'contact_embedded'
-  return 'home_embedded'
+  return 'embedded'
 }
 
 function ChatPanel({ floating = false, onClose, className = '' }) {

@@ -26,7 +26,7 @@ export function FaqPage() {
             </p>
           </div>
           <Button as={Link} to="/contato" data-cursor="action">
-            Quero meu diagnóstico gratuito
+            Agendar diagnóstico
           </Button>
         </div>
       </section>

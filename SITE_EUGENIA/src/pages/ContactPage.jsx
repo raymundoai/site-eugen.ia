@@ -8,8 +8,8 @@ export function ContactPage() {
           <p className="kicker">Contato</p>
           <h1>Fale com a Eugênia.</h1>
           <p>
-            Em poucos minutos a Eugênia mapeia seu cenário e agenda o diagnóstico gratuito com nosso time. Sem formulário. Sem
-            espera. Sem compromisso.
+            Em poucos minutos a Eugênia mapeia seu cenário e encaminha o diagnóstico com nosso time. Sem formulário longo. Sem
+            espera.
           </p>
         </div>
       </section>
@@ -38,8 +38,8 @@ export function ContactPage() {
                 </li>
                 <li>
                   <strong>WhatsApp</strong>
-                  <a href="https://api.whatsapp.com/send/?phone=555191283248" target="_blank" rel="noreferrer" data-cursor="action">
-                    (51) 9128-3248
+                  <a href="https://api.whatsapp.com/send/?phone=5551991129452" target="_blank" rel="noreferrer" data-cursor="action">
+                    (51) 99112-9452
                   </a>
                 </li>
                 <li>

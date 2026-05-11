@@ -9,7 +9,7 @@ export function Footer() {
         <div>
           <h3>Eugen.IA</h3>
           <p>
-            Automações e agentes de IA para que e-commerces parem de ser operados pelos donos e comecem a ser construídos por eles.
+            Diagnóstico e implementação de IA para empresas que querem resultado e não hype.
           </p>
           <div className="footer-socials" aria-label="Redes sociais da Eugen.IA">
             <a
@@ -64,8 +64,8 @@ export function Footer() {
               </a>
             </li>
             <li>
-              <a href="https://api.whatsapp.com/send/?phone=555191283248" target="_blank" rel="noreferrer" data-cursor="action">
-                (51) 9128-3248
+              <a href="https://api.whatsapp.com/send/?phone=5551991129452" target="_blank" rel="noreferrer" data-cursor="action">
+                (51) 99112-9452
               </a>
             </li>
             <li>Atendimento remoto em todo o Brasil</li>

@@ -15,19 +15,19 @@ export function AboutPage() {
                 E sei exatamente como é quando a operação cresce mais rápido do que a sua capacidade de controlar ela manualmente.
               </p>
               <p>
-                Era mais de 10 da noite. Abri a planilha, a mesma que eu abria toda noite, e comecei a atualizar preço por preço, linha por linha.
+                Era mais de 10 da noite. Abri a planilha, a mesma que eu abria toda noite, e comecei a atualizar informação por informação, linha por linha.
               </p>
               <p>
-                Eram mais de 4.000 SKUs. Preço, descrição, estoque, atributo. Às vezes os dados estavam em três sistemas diferentes que não conversavam entre si. O ERP dizia uma coisa. A plataforma dizia outra. O marketplace tinha um valor diferente dos dois.
+                Eram milhares de dados operacionais espalhados: preço, descrição, estoque, cliente, pedido, tarefa, prazo. Às vezes as informações estavam em sistemas diferentes que não conversavam entre si.
               </p>
               <p>
-                Eu já tinha mais de 5 anos dentro da operação de e-commerce, com a mão na massa, resolvendo problema real. E naquele momento pensei: isso não é sustentável.
+                Eu já tinha mais de 5 anos dentro de operação digital, com a mão na massa, resolvendo problema real. E naquele momento pensei: isso não é sustentável.
               </p>
               <p>
                 Não foi epifania. Foi necessidade. Comecei a usar IA de verdade nos processos e o que levava dias passou a levar horas. O que levava horas, minutos. Não foi mágica. Foi estrutura.
               </p>
               <p>
-                A Eugen.IA nasceu desse lugar. De uma frustração real transformada em solução real para operações que ainda estão presas nas mesmas planilhas que eu tinha.
+                A Eugen.IA nasceu desse lugar: uma frustração real transformada em solução para empresas que ainda estão presas em processos manuais.
               </p>
             </div>
 
@@ -45,13 +45,13 @@ export function AboutPage() {
           <article data-reveal>
             <h2>Quem fala aqui já operou</h2>
             <p>
-              Não ensinamos teoria sobre e-commerce. Mapeamos sua operação porque já vivemos operações parecidas com a sua e sabemos onde costuma estar o problema antes mesmo de você terminar de descrever.
+              Não ensinamos teoria distante da prática. Mapeamos sua operação porque já vivemos rotinas parecidas e sabemos onde os gargalos costumam aparecer.
             </p>
           </article>
           <article data-reveal>
             <h2>Devolver tempo a quem constrói</h2>
             <p>
-              Transformar processos manuais em sistemas inteligentes para que donos e gestores de e-commerce parem de ser o gargalo da própria empresa e voltem a ser os arquitetos dela.
+              Transformar processos manuais em sistemas inteligentes para que donos e gestores de PMEs parem de ser o gargalo da própria empresa.
             </p>
           </article>
           <article data-reveal>
@@ -81,7 +81,7 @@ export function AboutPage() {
             <p>30 minutos de conversa com a Eugênia para mapear o gargalo que mais pesa na sua operação hoje. Sem compromisso. Sem pitch.</p>
           </div>
           <Button as={Link} to="/contato" data-cursor="action">
-            Quero meu diagnóstico gratuito
+            Agendar diagnóstico
           </Button>
         </div>
       </section>
