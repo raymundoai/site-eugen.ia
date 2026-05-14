@@ -154,24 +154,29 @@ export function ParticleField() {
       start: () => `top+=${window.innerHeight * 0.8} top`,
       end: 'bottom top',
       onEnter:     () => setShape(makeRoad(W, H, MORPH_N)),
-      onLeave:     clearShape,
+      onLeave:     () => {},        // st3 assume a transição, não clearShape aqui
       onEnterBack: () => setShape(makeRoad(W, H, MORPH_N)),
       onLeaveBack: clearShape,
     })
 
-    // Serviços: mesmas partículas, shapes no lado direito do canvas
-    const SERVICE_FNS = [
-      () => makeBlackboard(W * 0.46, H, MORPH_N, 3),
-      () => makeGears(W * 0.46, H, 0, MORPH_N),
-      () => makeRobot(W * 0.46, H, MORPH_N),
-    ]
-    const toRight = (pts) => pts.map(p => ({ x: p.x + W * 0.50, y: p.y }))
+    // Serviços: mesmas partículas, canvas proporcional centrado no lado direito
+    function buildSvcShape(idx) {
+      const sw = Math.min(W * 0.38, H * 0.62)
+      const sh = sw * 1.10
+      const sx = W - sw - Math.max(16, W * 0.04)
+      const sy = (H - sh) * 0.44
+      let pts
+      if (idx === 0) pts = makeBlackboard(sw, sh, MORPH_N, 3)
+      else if (idx === 1) pts = makeGears(sw, sh, 0, MORPH_N)
+      else pts = makeRobot(sw, sh, MORPH_N)
+      return pts.map(p => ({ x: p.x + sx, y: p.y + sy }))
+    }
 
     let lastSvcIdx = -1
     function showService(idx) {
       if (idx === lastSvcIdx) return
       lastSvcIdx = idx
-      setShape(toRight(SERVICE_FNS[idx]()))
+      setShape(buildSvcShape(idx))
     }
 
     const st3 = ScrollTrigger.create({
