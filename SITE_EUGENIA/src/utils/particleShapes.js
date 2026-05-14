@@ -106,19 +106,20 @@ export function makeRoad(w, h, count) {
   return sampleEdgePixels(off, w, h, count)
 }
 
-// Blackboard: border + 3 checkbox rows with checkmarks — stroke + edge sampling
-export function makeBlackboard(w, h, count, checksVisible = 3) {
+// Blackboard: border + 3 checkbox rows. xOff desloca para o lado direito do canvas.
+export function makeBlackboard(w, h, count, checksVisible = 3, xOff = 0) {
   const off = makeOffscreen(w, h)
   const ctx = off.getContext('2d')
   ctx.clearRect(0, 0, w, h)
   ctx.strokeStyle = '#ffffff'
-  const lw = Math.max(16, w * 0.018)
+  const rw = w - xOff
+  const lw = Math.max(16, rw * 0.018)
   ctx.lineWidth = lw
   ctx.lineJoin = 'round'
-  ctx.strokeRect(w * 0.10, h * 0.12, w * 0.80, h * 0.76)
+  ctx.strokeRect(xOff + rw * 0.10, h * 0.12, rw * 0.80, h * 0.76)
   const rowsY = [0.30, 0.52, 0.74]
-  const boxX = w * 0.18
-  const boxSize = w * 0.14
+  const boxX = xOff + rw * 0.18
+  const boxSize = rw * 0.14
   for (let i = 0; i < 3; i++) {
     const by = rowsY[i] * h - boxSize * 0.5
     ctx.strokeRect(boxX, by, boxSize, boxSize)
@@ -129,23 +130,24 @@ export function makeBlackboard(w, h, count, checksVisible = 3) {
       ctx.lineTo(boxX + boxSize * 0.88, by + boxSize * 0.18)
       ctx.stroke()
     }
-    // Text line as a thick filled rect
     ctx.fillStyle = '#ffffff'
-    ctx.fillRect(boxX + boxSize + w * 0.06, rowsY[i] * h - lw * 0.4, w * 0.34, lw * 0.8)
+    ctx.fillRect(boxX + boxSize + rw * 0.06, rowsY[i] * h - lw * 0.4, rw * 0.34, lw * 0.8)
   }
   return sampleEdgePixels(off, w, h, count)
 }
 
-// Two interlocked gears — stroke-based outlines for clean edge sampling
-export function makeGears(w, h, angle = 0, count = 600) {
+// Duas engrenagens — stroke, xOff desloca para o lado direito.
+export function makeGears(w, h, angle = 0, count = 600, xOff = 0) {
   const off = makeOffscreen(w, h)
   const ctx = off.getContext('2d')
   ctx.clearRect(0, 0, w, h)
   ctx.strokeStyle = '#ffffff'
-  ctx.lineWidth = Math.max(16, w * 0.018)
+  const rw = w - xOff
+  ctx.lineWidth = Math.max(16, rw * 0.018)
   ctx.lineJoin = 'round'
-  _drawGear(ctx, w * 0.36, h * 0.50, w * 0.26, 10, angle)
-  _drawGear(ctx, w * 0.36 + w * 0.26 + w * 0.14, h * 0.52, w * 0.14, 7, angle * -1.857)
+  const r1 = rw * 0.26, r2 = rw * 0.14
+  _drawGear(ctx, xOff + rw * 0.36, h * 0.50, r1, 10, angle)
+  _drawGear(ctx, xOff + rw * 0.36 + r1 + r2, h * 0.52, r2, 7, angle * -1.4286)
   return sampleEdgePixels(off, w, h, count)
 }
 
@@ -171,18 +173,19 @@ function _drawGear(ctx, cx, cy, r, teeth, angle) {
   ctx.stroke()
 }
 
-// Robot head: rounded rect body, visor, two eyes, antenna
-export function makeRobot(w, h, count) {
+// Robô: cabeça arredondada, visor, olhos, antena. xOff desloca para o lado direito.
+export function makeRobot(w, h, count, xOff = 0) {
   const off = makeOffscreen(w, h)
   const ctx = off.getContext('2d')
   ctx.clearRect(0, 0, w, h)
   ctx.strokeStyle = '#ffffff'
-  const lw = Math.max(16, w * 0.018)
+  const rw = w - xOff
+  const lw = Math.max(16, rw * 0.018)
   ctx.lineWidth = lw
   ctx.lineJoin = 'round'
-  const hx = w * 0.20, hy = h * 0.18
-  const hw = w * 0.60, hh = h * 0.60
-  const rc = w * 0.06
+  const hx = xOff + rw * 0.20, hy = h * 0.18
+  const hw = rw * 0.60, hh = h * 0.60
+  const rc = rw * 0.06
   ctx.beginPath()
   ctx.moveTo(hx + rc, hy)
   ctx.lineTo(hx + hw - rc, hy)
@@ -195,9 +198,8 @@ export function makeRobot(w, h, count) {
   ctx.arcTo(hx, hy, hx + rc, hy, rc)
   ctx.closePath()
   ctx.stroke()
-  // Visor
-  const vx = w * 0.30, vy = h * 0.30, vw = w * 0.40, vh = h * 0.22
-  const vr = w * 0.04
+  const vx = xOff + rw * 0.30, vy = h * 0.30, vw = rw * 0.40, vh = h * 0.22
+  const vr = rw * 0.04
   ctx.beginPath()
   ctx.moveTo(vx + vr, vy)
   ctx.lineTo(vx + vw - vr, vy)
@@ -210,26 +212,23 @@ export function makeRobot(w, h, count) {
   ctx.arcTo(vx, vy, vx + vr, vy, vr)
   ctx.closePath()
   ctx.stroke()
-  // Eyes
   const eyeY = h * 0.41
   ctx.beginPath()
-  ctx.arc(w * 0.40, eyeY, w * 0.05, 0, Math.PI * 2)
+  ctx.arc(xOff + rw * 0.40, eyeY, rw * 0.05, 0, Math.PI * 2)
   ctx.stroke()
   ctx.beginPath()
-  ctx.arc(w * 0.60, eyeY, w * 0.05, 0, Math.PI * 2)
-  ctx.stroke()
-  // Mouth: horizontal line
-  ctx.beginPath()
-  ctx.moveTo(w * 0.34, h * 0.60)
-  ctx.lineTo(w * 0.66, h * 0.60)
-  ctx.stroke()
-  // Antenna
-  ctx.beginPath()
-  ctx.moveTo(w * 0.50, hy)
-  ctx.lineTo(w * 0.50, h * 0.08)
+  ctx.arc(xOff + rw * 0.60, eyeY, rw * 0.05, 0, Math.PI * 2)
   ctx.stroke()
   ctx.beginPath()
-  ctx.arc(w * 0.50, h * 0.05, w * 0.04, 0, Math.PI * 2)
+  ctx.moveTo(xOff + rw * 0.34, h * 0.60)
+  ctx.lineTo(xOff + rw * 0.66, h * 0.60)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.moveTo(xOff + rw * 0.50, hy)
+  ctx.lineTo(xOff + rw * 0.50, h * 0.08)
+  ctx.stroke()
+  ctx.beginPath()
+  ctx.arc(xOff + rw * 0.50, h * 0.05, rw * 0.04, 0, Math.PI * 2)
   ctx.stroke()
   return sampleEdgePixels(off, w, h, count)
 }

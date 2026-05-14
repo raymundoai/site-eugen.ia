@@ -123,11 +123,19 @@ export function ParticleField() {
 
     function setShape(pts) {
       if (!pts || pts.length === 0) { morphing = false; return }
-      morphCount = Math.min(MORPH_N, pts.length)
-      for (let i = 0; i < morphCount; i++) {
+      const n = Math.min(MORPH_N, pts.length)
+      for (let i = 0; i < n; i++) {
         tx[i] = pts[i].x
         ty[i] = pts[i].y
       }
+      // Preenche partículas restantes com alvos aleatórios do mesmo conjunto
+      // para que TODAS as MORPH_N partículas se movam na transição
+      for (let i = n; i < MORPH_N; i++) {
+        const j = (Math.random() * n) | 0
+        tx[i] = pts[j].x
+        ty[i] = pts[j].y
+      }
+      morphCount = MORPH_N
       morphing = true
     }
     function clearShape() {
@@ -159,17 +167,12 @@ export function ParticleField() {
       onLeaveBack: clearShape,
     })
 
-    // Serviços: mesmas partículas, canvas proporcional centrado no lado direito
+    // Serviços: canvas W×H completo com xOff para renderizar no lado direito
     function buildSvcShape(idx) {
-      const sw = Math.min(W * 0.38, H * 0.62)
-      const sh = sw * 1.10
-      const sx = W - sw - Math.max(16, W * 0.04)
-      const sy = (H - sh) * 0.44
-      let pts
-      if (idx === 0) pts = makeBlackboard(sw, sh, MORPH_N, 3)
-      else if (idx === 1) pts = makeGears(sw, sh, 0, MORPH_N)
-      else pts = makeRobot(sw, sh, MORPH_N)
-      return pts.map(p => ({ x: p.x + sx, y: p.y + sy }))
+      const xOff = W * 0.52
+      if (idx === 0) return makeBlackboard(W, H, MORPH_N, 3, xOff)
+      if (idx === 1) return makeGears(W, H, 0, MORPH_N, xOff)
+      return makeRobot(W, H, MORPH_N, xOff)
     }
 
     let lastSvcIdx = -1
