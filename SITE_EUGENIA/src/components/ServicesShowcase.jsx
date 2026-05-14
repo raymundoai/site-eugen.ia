@@ -13,6 +13,7 @@ export function ServicesShowcase() {
   const h2Ref = useRef(null)
   const cardsPhaseRef = useRef(null)
   const [active, setActive] = useState(0)
+  const [tabProgress, setTabProgress] = useState(0)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -42,7 +43,9 @@ export function ServicesShowcase() {
         scrub: true,
         onUpdate: (self) => {
           const next = Math.min(services.length - 1, Math.floor(self.progress * services.length))
+          const segProg = (self.progress * services.length) - next
           setActive(next)
+          setTabProgress(Math.min(1, segProg))
         },
       })
     })
@@ -69,6 +72,7 @@ export function ServicesShowcase() {
               <a key={service.title} className={active === index ? 'active' : ''} href={`#service-${service.signal}`}>
                 <span>{service.signal}</span>
                 {service.title}
+                <i className="tab-progress" style={{ transform: `scaleX(${index < active ? 1 : index === active ? tabProgress : 0})` }} />
               </a>
             ))}
           </div>
