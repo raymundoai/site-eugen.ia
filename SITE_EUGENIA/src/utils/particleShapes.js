@@ -84,7 +84,7 @@ export function makeRoad(w, h, count) {
   const ctx = off.getContext('2d')
   ctx.clearRect(0, 0, w, h)
   ctx.strokeStyle = '#ffffff'
-  ctx.lineWidth = Math.max(8, w * 0.009)
+  ctx.lineWidth = Math.max(20, w * 0.022)
   const vx = w * 0.5, vy = h * 0.15
   // Left edge
   ctx.beginPath()
@@ -103,7 +103,7 @@ export function makeRoad(w, h, count) {
   ctx.lineTo(vx, vy)
   ctx.stroke()
   ctx.setLineDash([])
-  return samplePixels(off, w, h, count)
+  return sampleEdgePixels(off, w, h, count)
 }
 
 // Blackboard with `checksVisible` (0-3) checkmarks shown
