@@ -5,12 +5,13 @@ import { makeQuestionMarks, makeRoad } from '../utils/particleShapes'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const N      = 3000
-const TAU    = Math.PI * 2
-const OPA    = [0.15, 0.25, 0.38]
-const GOLD   = '251,186,35'
-const MOUSE_R  = 100
-const MOUSE_R2 = MOUSE_R * MOUSE_R
+const N          = 3000
+const MORPH_N    = 1200   // partículas usadas para forming shapes
+const TAU        = Math.PI * 2
+const OPA        = [0.15, 0.25, 0.38]
+const GOLD       = '251,186,35'
+const MOUSE_R    = 100
+const MOUSE_R2   = MOUSE_R * MOUSE_R
 
 export function ParticleField() {
   const canvasRef = useRef(null)
@@ -53,16 +54,16 @@ export function ParticleField() {
       ctx.clearRect(0, 0, W, H)
 
       for (let i = 0; i < N; i++) {
-        if (morphing && i < 800) {
+        if (morphing && i < MORPH_N) {
           vx[i] += (tx[i] - px[i]) * 0.07
           vy[i] += (ty[i] - py[i]) * 0.07
           vx[i] *= 0.88
           vy[i] *= 0.88
         } else {
-          vx[i] += (Math.random() - 0.5) * 0.08
-          vy[i] += (Math.random() - 0.5) * 0.08
-          vx[i] *= 0.97
-          vy[i] *= 0.97
+          vx[i] += (Math.random() - 0.5) * 0.015
+          vy[i] += (Math.random() - 0.5) * 0.015
+          vx[i] *= 0.95
+          vy[i] *= 0.95
         }
 
         const dx = px[i] - mouseX
@@ -111,7 +112,7 @@ export function ParticleField() {
 
     function setShape(pts) {
       if (!pts || pts.length === 0) { morphing = false; return }
-      for (let i = 0; i < Math.min(800, pts.length); i++) {
+      for (let i = 0; i < Math.min(MORPH_N, pts.length); i++) {
         tx[i] = pts[i].x
         ty[i] = pts[i].y
       }
@@ -119,23 +120,24 @@ export function ParticleField() {
     }
     function clearShape() { morphing = false }
 
+    // Dispara quando ~50% do texto já digitado (0.8 × vh após o início do pin)
     const st1 = ScrollTrigger.create({
       trigger: '.problem-text-phase',
-      start: 'top center',
-      end: 'bottom center',
-      onEnter:     () => setShape(makeQuestionMarks(W, H, 800)),
+      start: () => `top+=${window.innerHeight * 0.8} top`,
+      end: 'bottom top',
+      onEnter:     () => setShape(makeQuestionMarks(W, H, MORPH_N)),
       onLeave:     clearShape,
-      onEnterBack: () => setShape(makeQuestionMarks(W, H, 800)),
+      onEnterBack: () => setShape(makeQuestionMarks(W, H, MORPH_N)),
       onLeaveBack: clearShape,
     })
 
     const st2 = ScrollTrigger.create({
       trigger: '.showcase-text-phase',
-      start: 'top center',
-      end: 'bottom center',
-      onEnter:     () => setShape(makeRoad(W, H, 800)),
+      start: () => `top+=${window.innerHeight * 0.8} top`,
+      end: 'bottom top',
+      onEnter:     () => setShape(makeRoad(W, H, MORPH_N)),
       onLeave:     clearShape,
-      onEnterBack: () => setShape(makeRoad(W, H, 800)),
+      onEnterBack: () => setShape(makeRoad(W, H, MORPH_N)),
       onLeaveBack: clearShape,
     })
 

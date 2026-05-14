@@ -30,12 +30,13 @@ function makeOffscreen(w, h) {
   return c
 }
 
-// 5 question marks at fixed positions, pixel-sampled
+// 5 question marks at fixed positions, pixel-sampled — stroke-only for sharp outlines
 export function makeQuestionMarks(w, h, count) {
   const off = makeOffscreen(w, h)
   const ctx = off.getContext('2d')
   ctx.clearRect(0, 0, w, h)
-  ctx.fillStyle = '#ffffff'
+  ctx.strokeStyle = '#ffffff'
+  ctx.lineWidth = Math.max(10, h * 0.016)
   const positions = [[0.20, 0.45], [0.50, 0.25], [0.80, 0.55], [0.35, 0.72], [0.65, 0.18]]
   const sizes    = [0.18, 0.20, 0.22, 0.19, 0.21]
   ctx.textAlign = 'center'
@@ -43,7 +44,7 @@ export function makeQuestionMarks(w, h, count) {
   for (let i = 0; i < 5; i++) {
     const fontSize = sizes[i] * h
     ctx.font = `900 ${fontSize}px Sora, sans-serif`
-    ctx.fillText('?', positions[i][0] * w, positions[i][1] * h)
+    ctx.strokeText('?', positions[i][0] * w, positions[i][1] * h)
   }
   return samplePixels(off, w, h, count)
 }
@@ -54,7 +55,7 @@ export function makeRoad(w, h, count) {
   const ctx = off.getContext('2d')
   ctx.clearRect(0, 0, w, h)
   ctx.strokeStyle = '#ffffff'
-  ctx.lineWidth = Math.max(3, w * 0.004)
+  ctx.lineWidth = Math.max(8, w * 0.009)
   const vx = w * 0.5, vy = h * 0.15
   // Left edge
   ctx.beginPath()
