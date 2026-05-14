@@ -85,7 +85,7 @@ export function makeRoad(w, h, count) {
   ctx.clearRect(0, 0, w, h)
   ctx.strokeStyle = '#ffffff'
   ctx.lineWidth = Math.max(20, w * 0.022)
-  const vx = w * 0.5, vy = h * 0.15
+  const vx = w * 0.5, vy = -h * 0.20
   // Left edge
   ctx.beginPath()
   ctx.moveTo(w * 0.10, h)
