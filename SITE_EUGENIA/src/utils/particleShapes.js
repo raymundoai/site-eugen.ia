@@ -1,5 +1,4 @@
-// Returns up to `count` {x, y} points sampled from non-transparent pixels.
-// Uses reservoir sampling (O(n), no full-array shuffle).
+// Reservoir sampling com jitter sub-pixel para evitar alinhamento em grade.
 function samplePixels(off, w, h, count) {
   const ctx = off.getContext('2d')
   const data = ctx.getImageData(0, 0, w, h).data
@@ -10,11 +9,42 @@ function samplePixels(off, w, h, count) {
     for (let x = 0; x < w; x += step) {
       if (data[(y * w + x) * 4 + 3] > 128) {
         k++
+        const pt = { x: x + (Math.random() - 0.5) * step, y: y + (Math.random() - 0.5) * step }
         if (result.length < count) {
-          result.push({ x, y })
+          result.push(pt)
         } else {
           const j = (Math.random() * k) | 0
-          if (j < count) result[j] = { x, y }
+          if (j < count) result[j] = pt
+        }
+      }
+    }
+  }
+  return result
+}
+
+// Amostra apenas pixels de borda (adjacentes a pixels transparentes) — dá contornos nítidos.
+function sampleEdgePixels(off, w, h, count) {
+  const ctx = off.getContext('2d')
+  const data = ctx.getImageData(0, 0, w, h).data
+  const result = []
+  let k = 0
+  const step = 2
+  for (let y = step; y < h - step; y += step) {
+    for (let x = step; x < w - step; x += step) {
+      if (data[(y * w + x) * 4 + 3] > 128) {
+        const above = data[((y - step) * w + x) * 4 + 3]
+        const below = data[((y + step) * w + x) * 4 + 3]
+        const left  = data[(y * w + (x - step)) * 4 + 3]
+        const right = data[(y * w + (x + step)) * 4 + 3]
+        if (above < 128 || below < 128 || left < 128 || right < 128) {
+          k++
+          const pt = { x: x + (Math.random() - 0.5) * 1.5, y: y + (Math.random() - 0.5) * 1.5 }
+          if (result.length < count) {
+            result.push(pt)
+          } else {
+            const j = (Math.random() * k) | 0
+            if (j < count) result[j] = pt
+          }
         }
       }
     }
@@ -30,23 +60,22 @@ function makeOffscreen(w, h) {
   return c
 }
 
-// 5 question marks at fixed positions, pixel-sampled — stroke-only for sharp outlines
+// 5 question marks at fixed positions — filled then edge-sampled for clean outlines
 export function makeQuestionMarks(w, h, count) {
   const off = makeOffscreen(w, h)
   const ctx = off.getContext('2d')
   ctx.clearRect(0, 0, w, h)
-  ctx.strokeStyle = '#ffffff'
-  ctx.lineWidth = Math.max(10, h * 0.016)
+  ctx.fillStyle = '#ffffff'
   const positions = [[0.20, 0.45], [0.50, 0.25], [0.80, 0.55], [0.35, 0.72], [0.65, 0.18]]
-  const sizes    = [0.18, 0.20, 0.22, 0.19, 0.21]
+  const sizes    = [0.22, 0.24, 0.26, 0.23, 0.25]
   ctx.textAlign = 'center'
   ctx.textBaseline = 'middle'
   for (let i = 0; i < 5; i++) {
     const fontSize = sizes[i] * h
     ctx.font = `900 ${fontSize}px Sora, sans-serif`
-    ctx.strokeText('?', positions[i][0] * w, positions[i][1] * h)
+    ctx.fillText('?', positions[i][0] * w, positions[i][1] * h)
   }
-  return samplePixels(off, w, h, count)
+  return sampleEdgePixels(off, w, h, count)
 }
 
 // Two road edges converging to vanishing point + center dashes

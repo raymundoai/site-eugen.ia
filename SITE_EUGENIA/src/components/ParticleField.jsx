@@ -118,7 +118,13 @@ export function ParticleField() {
       }
       morphing = true
     }
-    function clearShape() { morphing = false }
+    function clearShape() {
+      for (let i = 0; i < MORPH_N; i++) {
+        vx[i] *= 0.1
+        vy[i] *= 0.1
+      }
+      morphing = false
+    }
 
     // Dispara quando ~50% do texto já digitado (0.8 × vh após o início do pin)
     const st1 = ScrollTrigger.create({
