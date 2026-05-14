@@ -44,6 +44,7 @@ export function ParticleField() {
     }
 
     let morphing = false
+    let morphCount = 0
     let mouseX = -9999, mouseY = -9999
 
     const onMouseMove = (e) => { mouseX = e.clientX; mouseY = e.clientY }
@@ -54,11 +55,12 @@ export function ParticleField() {
       ctx.clearRect(0, 0, W, H)
 
       for (let i = 0; i < N; i++) {
-        if (morphing && i < MORPH_N) {
-          vx[i] += (tx[i] - px[i]) * 0.07
-          vy[i] += (ty[i] - py[i]) * 0.07
-          vx[i] *= 0.88
-          vy[i] *= 0.88
+        const isMorph = morphing && i < morphCount
+        if (isMorph) {
+          vx[i] += (tx[i] - px[i]) * 0.04
+          vy[i] += (ty[i] - py[i]) * 0.04
+          vx[i] *= 0.80
+          vy[i] *= 0.80
         } else {
           vx[i] += (Math.random() - 0.5) * 0.015
           vy[i] += (Math.random() - 0.5) * 0.015
@@ -79,10 +81,18 @@ export function ParticleField() {
         px[i] += vx[i]
         py[i] += vy[i]
 
-        if (px[i] < 0)       px[i] += W
-        else if (px[i] > W)  px[i] -= W
-        if (py[i] < 0)       py[i] += H
-        else if (py[i] > H)  py[i] -= H
+        if (isMorph) {
+          // Clamp (sem wrap): evita loop teleporte + spring → partículas alucinando
+          if (px[i] < 0) { px[i] = 0; vx[i] = 0 }
+          else if (px[i] > W) { px[i] = W; vx[i] = 0 }
+          if (py[i] < 0) { py[i] = 0; vy[i] = 0 }
+          else if (py[i] > H) { py[i] = H; vy[i] = 0 }
+        } else {
+          if (px[i] < 0)       px[i] += W
+          else if (px[i] > W)  px[i] -= W
+          if (py[i] < 0)       py[i] += H
+          else if (py[i] > H)  py[i] -= H
+        }
       }
 
       for (let b = 0; b < 3; b++) {
@@ -107,19 +117,21 @@ export function ParticleField() {
       canvas.width  = W
       canvas.height = H
       morphing = false
+      morphCount = 0
     }
     window.addEventListener('resize', onResize)
 
     function setShape(pts) {
       if (!pts || pts.length === 0) { morphing = false; return }
-      for (let i = 0; i < Math.min(MORPH_N, pts.length); i++) {
+      morphCount = Math.min(MORPH_N, pts.length)
+      for (let i = 0; i < morphCount; i++) {
         tx[i] = pts[i].x
         ty[i] = pts[i].y
       }
       morphing = true
     }
     function clearShape() {
-      for (let i = 0; i < MORPH_N; i++) {
+      for (let i = 0; i < morphCount; i++) {
         vx[i] *= 0.1
         vy[i] *= 0.1
       }
