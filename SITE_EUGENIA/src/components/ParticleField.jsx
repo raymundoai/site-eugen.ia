@@ -176,9 +176,9 @@ export function ParticleField() {
       if (idx === 0) pts = makeBlackboard(W, H, MORPH_N, 3, xOff)
       else if (idx === 1) pts = makeGears(W, H, 0, MORPH_N, xOff)
       else pts = makeRobot(W, H, MORPH_N, xOff)
-      const scale  = 0.85
-      const pivotX = (W * 0.52 + W) / 2   // centro do espaço vazio
-      const pivotY = H * 0.88              // âncora na base
+      const scale  = 0.72
+      const pivotX = W * 0.65             // mais no centro da tela
+      const pivotY = H * 0.82             // âncora na base
       return pts.map(p => ({
         x: pivotX + (p.x - pivotX) * scale,
         y: pivotY + (p.y - pivotY) * scale,
