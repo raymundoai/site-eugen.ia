@@ -167,12 +167,22 @@ export function ParticleField() {
       onLeaveBack: clearShape,
     })
 
-    // Serviços: canvas W×H completo com xOff para renderizar no lado direito
+    // Serviços: canvas W×H completo com xOff para renderizar no lado direito.
+    // Após amostrar, escala 15% menor: pivot no centro horizontal do espaço vazio
+    // e na base das shapes — largura reduz pelos dois lados, altura sobe pelo topo.
     function buildSvcShape(idx) {
       const xOff = W * 0.52
-      if (idx === 0) return makeBlackboard(W, H, MORPH_N, 3, xOff)
-      if (idx === 1) return makeGears(W, H, 0, MORPH_N, xOff)
-      return makeRobot(W, H, MORPH_N, xOff)
+      let pts
+      if (idx === 0) pts = makeBlackboard(W, H, MORPH_N, 3, xOff)
+      else if (idx === 1) pts = makeGears(W, H, 0, MORPH_N, xOff)
+      else pts = makeRobot(W, H, MORPH_N, xOff)
+      const scale  = 0.85
+      const pivotX = (W * 0.52 + W) / 2   // centro do espaço vazio
+      const pivotY = H * 0.88              // âncora na base
+      return pts.map(p => ({
+        x: pivotX + (p.x - pivotX) * scale,
+        y: pivotY + (p.y - pivotY) * scale,
+      }))
     }
 
     let lastSvcIdx = -1
