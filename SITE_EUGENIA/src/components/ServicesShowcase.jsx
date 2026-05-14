@@ -1,14 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { BrainCircuit, GraduationCap, Workflow } from 'lucide-react'
 import { services } from '../data/siteContent'
-import { ServiceCanvas } from './ServiceCanvas'
 import { splitChars } from '../hooks/useTypewriterScroll'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const icons = [GraduationCap, Workflow, BrainCircuit]
 const HEADLINE = 'Mostramos o caminho mais rápido para sua empresa inovar e crescer com Inteligência Artificial.'
 
 export function ServicesShowcase() {
@@ -52,8 +49,6 @@ export function ServicesShowcase() {
     return () => ctx.revert()
   }, [])
 
-  const ActiveIcon = icons[active]
-
   return (
     <section className="showcase-section" id="servicos">
       {/* Fase de texto — pin + digita + apaga */}
@@ -92,19 +87,8 @@ export function ServicesShowcase() {
               </div>
             </div>
 
-            <div className="showcase-media" aria-hidden="true">
-              <div className="showcase-stage">
-                {services.map((service, index) => (
-                  <div className={active === index ? 'motion-panel active' : 'motion-panel'} key={service.title}>
-                    <ServiceCanvas serviceIndex={index} active={active === index} />
-                  </div>
-                ))}
-              </div>
-              <div className="media-readout">
-                <ActiveIcon size={22} />
-                <span>{services[active].title}</span>
-              </div>
-            </div>
+            {/* Coluna direita vazia — canvas global renderiza a shape aqui */}
+            <div aria-hidden="true" />
           </div>
         </div>
       </div>

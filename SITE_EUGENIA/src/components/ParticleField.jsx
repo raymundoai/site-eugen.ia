@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { makeQuestionMarks, makeRoad } from '../utils/particleShapes'
+import { makeQuestionMarks, makeRoad, makeBlackboard, makeGears, makeRobot } from '../utils/particleShapes'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -159,12 +159,40 @@ export function ParticleField() {
       onLeaveBack: clearShape,
     })
 
+    // Serviços: mesmas partículas, shapes no lado direito do canvas
+    const SERVICE_FNS = [
+      () => makeBlackboard(W * 0.46, H, MORPH_N, 3),
+      () => makeGears(W * 0.46, H, 0, MORPH_N),
+      () => makeRobot(W * 0.46, H, MORPH_N),
+    ]
+    const toRight = (pts) => pts.map(p => ({ x: p.x + W * 0.50, y: p.y }))
+
+    let lastSvcIdx = -1
+    function showService(idx) {
+      if (idx === lastSvcIdx) return
+      lastSvcIdx = idx
+      setShape(toRight(SERVICE_FNS[idx]()))
+    }
+
+    const st3 = ScrollTrigger.create({
+      trigger: '.showcase-cards-phase',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true,
+      onEnter:     () => showService(0),
+      onEnterBack: () => showService(2),
+      onLeave:     () => { clearShape(); lastSvcIdx = -1 },
+      onLeaveBack: () => { clearShape(); lastSvcIdx = -1 },
+      onUpdate:    (self) => showService(Math.min(2, Math.floor(self.progress * 3))),
+    })
+
     return () => {
       cancelAnimationFrame(raf)
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('resize', onResize)
       st1.kill()
       st2.kill()
+      st3.kill()
     }
   }, [])
 
