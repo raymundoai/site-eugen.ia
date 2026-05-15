@@ -907,7 +907,7 @@ main {
 
 .manifesto-panel {
   display: grid;
-  gap: 20px;
+  gap: 28px;
   max-width: 960px;
   padding: clamp(32px, 6vw, 74px);
   border-radius: 38px;
@@ -916,15 +916,25 @@ main {
     color-mix(in oklab, var(--surface), transparent 10%);
   border: 1px solid color-mix(in oklab, var(--line), var(--foreground) 10%);
   box-shadow: var(--shadow-glass);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 }
 
-.manifesto-panel p {
+.manifesto-headline {
   font-family: 'Sora', sans-serif;
-  font-size: clamp(1.15rem, 1.9vw, 2.05rem);
-  line-height: 1.18;
+  font-size: clamp(1.6rem, 3vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.manifesto-hype {
+  color: var(--primary);
 }
 
 .manifesto-panel p + p {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(0.95rem, 1.3vw, 1.25rem);
+  line-height: 1.6;
   color: var(--muted);
 }
 
