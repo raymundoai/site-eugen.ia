@@ -912,7 +912,7 @@ main {
   padding: clamp(32px, 6vw, 74px);
   border-radius: 38px;
   background:
-    radial-gradient(circle at var(--cursor-x) var(--cursor-y), rgba(251, 186, 35, 0.18), transparent 24%),
+    radial-gradient(circle at var(--cursor-x, 30%) var(--cursor-y, 40%), rgba(251, 186, 35, 0.18), transparent 24%),
     var(--surface);
   border: 1px solid color-mix(in oklab, var(--line), white 12%);
   box-shadow: var(--shadow-glass);
