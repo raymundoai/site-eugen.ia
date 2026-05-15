@@ -1,171 +1,104 @@
 export const navItems = [
-  { label: 'Início', path: '/' },
-  { label: 'Sobre', path: '/sobre' },
-  { label: 'FAQ', path: '/faq' },
-  { label: 'Contato', path: '/contato' },
-]
-
-export const heroProofs = [
-  { value: '5 etapas', label: 'Para mapear, decidir e implementar com clareza' },
-  { value: '5 a 15 dias', label: 'Para desenvolver a primeira solução priorizada' },
-  { value: '1º mês', label: 'Para buscar resultado visível na operação' },
+  { label: 'Início', href: '/' },
+  { label: 'Perguntas Frequentes', href: '/#faq' },
+  { label: 'Contato', href: '/contato' },
 ]
 
 export const services = [
   {
-    title: 'Consultoria Estratégica de IA',
-    icon: 'compass',
-    promise: 'Clareza antes do investimento.',
-    details: 'O que automatizar, em que ordem, com que impacto.',
-    bullets: [
-      'Diagnóstico dos gargalos reais',
-      'Priorização por impacto operacional',
-    ],
-    result: 'Você investe em IA sabendo por onde começar.',
+    title: 'Consultoria e Treinamento',
+    short: 'Clareza antes de qualquer ferramenta.',
+    body: 'Mapeamos os gargalos reais da sua operação, definimos prioridades e capacitamos a sua equipe para operar com IA.',
+    signal: '01',
   },
   {
-    title: 'Automações de Processos',
-    icon: 'workflow',
-    promise: 'Processos que rodam sozinhos.',
-    details: 'Horas devolvidas para decisão real.',
-    bullets: [
-      'Menos tarefas manuais',
-      'Menos retrabalho e erro operacional',
-    ],
-    result: 'Sua equipe para de gastar energia no que pode ser automatizado.',
+    title: 'Automação de Processos',
+    short: 'Processos que rodam sozinhos.',
+    body: 'Horas devolvidas para decisão, relacionamento e crescimento. Sua equipe para de apagar incêndio e começa a evoluir.',
+    signal: '02',
   },
   {
-    title: 'Agentes de IA Personalizados',
-    icon: 'bot',
-    promise: 'IA que conhece seu negócio.',
-    details: 'Agentes que operam no seu canal e respondem com o seu tom de voz.',
-    bullets: [
-      'Atendimento e triagem com contexto',
-      'Ações conectadas aos seus sistemas',
-    ],
-    result: 'IA deixa de ser conversa solta e passa a apoiar a operação.',
-  },
-  {
-    title: 'Integrações com Plataformas',
-    icon: 'plug',
-    promise: 'Fluxos rastreáveis e auditáveis.',
-    details: 'ERP, CRM, WhatsApp e marketplaces conectados com lógica operacional.',
-    bullets: [
-      'Sistemas conversando entre si',
-      'Dados mais consistentes para decidir',
-    ],
-    result: 'Menos ilhas de informação na empresa.',
-  },
-  {
-    title: 'Desenvolvimento de Apps e SaaS',
-    icon: 'app',
-    promise: 'Sistemas sob medida para o seu negócio.',
-    details: 'Chega de adaptar seu time à ferramenta. A ferramenta deve se adaptar ao seu processo.',
-    bullets: [
-      'Aplicações internas sob medida',
-      'Ferramentas digitais conectadas à operação',
-    ],
-    result: 'Tecnologia construída em volta do processo real.',
+    title: 'Agentes de IA',
+    short: 'Sua operação, aumentada por IA.',
+    body: 'Agentes personalizados, conectados ao seu stack, executando tarefas de forma autônoma, segura e rastreável.',
+    signal: '03',
   },
 ]
 
 export const methodSteps = [
   {
-    number: '01',
     title: 'Diagnóstico',
-    text: 'Mapeamos e diagnosticamos os principais desafios da sua operação.',
+    body: 'Primeiro, mapeamos e diagnosticamos os principais desafios e gargalos da sua operação.',
   },
   {
-    number: '02',
-    title: 'Desenho',
-    text: 'Desenhamos soluções sob medida e conectadas com os sistemas que sua empresa já utiliza.',
+    title: 'Desenvolvimento',
+    body: 'Desenvolvemos em tempo recorde (de 7 à 15 dias) exatamente a solução que sua empresa precisa.',
   },
   {
-    number: '03',
-    title: 'Decisão',
-    text: 'Apresentamos um relatório claro para decidir por onde começar com o mínimo de esforço inicial.',
-  },
-  {
-    number: '04',
-    title: 'Desenvolvimento e Implementação',
-    text: 'Desenvolvemos agentes, automações, treinamentos ou sistemas em tempo recorde, conforme a necessidade real.',
+    title: 'Implementação e Controle',
+    body: 'Implementamos os Agentes e acompanhamos a operação até garantir que esteja totalmente funcional e gerando o resultado desejado.',
   },
 ]
 
-export const faqItems = [
+export const faqs = [
   {
-    question: 'Minha empresa ainda é pequena. Faz sentido investir em IA agora?',
+    question: 'Quem é a Eugen.IA?',
     answer:
-      'Depende do gargalo. Se a equipe perde tempo com atendimento, planilhas, tarefas repetitivas ou sistemas que não conversam, já existe espaço para automação gerar retorno.',
-  },
-  {
-    question: 'Quanto tempo leva para implementar?',
-    answer:
-      'Na maior parte dos projetos, a implementação fica entre 7 e 21 dias. O prazo depende da complexidade dos processos, integrações e dados envolvidos.',
-  },
-  {
-    question: 'Precisa ter equipe técnica para usar o que vocês constroem?',
-    answer:
-      'Não. Construímos para que sua equipe atual consiga operar no dia a dia e documentamos o que foi feito.',
-  },
-  {
-    question: 'Já investi em tecnologia antes e não tive retorno. Por que seria diferente aqui?',
-    answer:
-      'Normalmente o problema não é só a tecnologia, mas a ausência de diagnóstico antes da implementação. Começamos pelo mapeamento para entender o que trava a operação antes de propor qualquer solução.',
-  },
-  {
-    question: 'O diagnóstico tem algum compromisso?',
-    answer:
-      'Nenhum. É uma conversa de 30 minutos para entender sua operação e identificar oportunidades reais. Se fizer sentido avançar, apresentamos um plano.',
-  },
-  {
-    question: 'Não tenho tempo agora para implementar uma coisa nova.',
-    answer:
-      'A falta de tempo costuma ser causada pelos próprios problemas que a automação resolveria. Não é preciso parar tudo: começamos pelo gargalo de maior impacto.',
-  },
-  {
-    question: 'IA substitui minha equipe?',
-    answer:
-      'Não é o objetivo. IA bem implementada reduz tarefas repetitivas para que a equipe foque no que exige julgamento, relacionamento e decisão.',
-  },
-  {
-    question: 'Tenho medo de perder o controle ao automatizar processos.',
-    answer:
-      'Automatizar não é abrir mão do controle. É transformar processos manuais em fluxos rastreáveis, documentados e ajustáveis.',
-  },
-  {
-    question: 'Minha operação é muito específica. Existe solução pronta para o que eu tenho?',
-    answer:
-      'Não oferecemos pacote pronto. Cada projeto começa pelo mapeamento do seu cenário, dos seus processos e dos seus gargalos.',
-  },
-  {
-    question: 'Quais plataformas vocês integram?',
-    answer:
-      'Integramos CRMs, ERPs, planilhas, plataformas de venda, sistemas internos, bancos de dados e canais como WhatsApp. A viabilidade técnica é avaliada no diagnóstico.',
-  },
-  {
-    question: 'Integra com WhatsApp?',
-    answer:
-      'Sim. Construímos fluxos via WhatsApp Business para atendimento, qualificação de leads, notificações e operação interna.',
-  },
-  {
-    question: 'Preciso ver o ROI antes de investir. Como garantir que vai gerar retorno?',
-    answer:
-      'Nenhuma implementação séria garante ROI antes de ser testada. O que fazemos é mapear perdas de tempo e dinheiro e estimar o impacto esperado antes da proposta.',
-  },
-  {
-    question: 'Vocês fazem tráfego pago?',
-    answer:
-      'Não é nosso foco principal. Trabalhamos na estrutura que ajuda o tráfego a converter: atendimento, integração, qualificação de leads e páginas mais claras.',
-  },
-  {
-    question: 'Como funciona o diagnóstico gratuito?',
-    answer:
-      'É uma conversa de 30 minutos para mapear o maior gargalo operacional, os processos que mais consomem tempo e o nível de urgência.',
+      'A Eugen.IA nasceu de um lugar muito específico: 11 anos operando negócios físicos e digitais no Brasil, vendo de perto o quanto uma operação desorganizada consome o tempo de quem deveria estar crescendo.\n\nA maioria das empresas que chega até nós passa pelo mesmo ciclo. Adotam ferramentas antes de entender o gargalo. Implementam soluções sem mapear o processo. Gastam em tecnologia e ficam sem retorno. O problema nunca foi a ferramenta. Foi a falta de diagnóstico antes dela.\n\nAcreditamos que IA bem implementada começa pelo mapeamento. Antes de qualquer proposta, entendemos o que está travando, priorizamos o que gera impacto real e construímos soluções que a sua equipe atual consegue operar.\n\nSomos uma agência de implementação, construída por quem conhece a operação por dentro. Nosso método de trabalho é baseado no Design Sprint do Google, adaptado para a realidade das PMEs brasileiras. Resultado visível desde o primeiro mês, escopo fechado antes do desenvolvimento começar e entrega em torno de 7-15 dias.\n\nNão prometemos resultado. Garantimos ele.',
   },
   {
     question: 'Qual o investimento?',
     answer:
-      'Depende do escopo. Depois do diagnóstico, você recebe uma proposta com entregáveis claros e investimento transparente.',
+      'Depende do escopo e todo projeto é sob medida. Depois de mapear sua operação, você recebe uma proposta com escopo claro, entregáveis definidos e investimento transparente. A pergunta mais útil antes do preço costuma ser outra: quanto custa manter a operação do jeito que está por mais 6 meses?',
+  },
+  {
+    question: 'IA substitui minha equipe?',
+    answer:
+      'Não é o objetivo e não é o que acontece na prática. IA bem implementada reduz tarefas repetitivas para que sua equipe passe a fazer o que exige julgamento, relacionamento e decisão humana. A questão não é substituição. É redirecionamento.',
+  },
+  {
+    question: 'Não vou perder o controle ao automatizar processos?',
+    answer:
+      'Esse medo é comum e faz sentido. Automatizar não é abrir mão do controle. É transformar processos manuais e sujeitos a erro em fluxos rastreáveis, documentados e auditáveis. Qualquer automação que construímos pode ser interrompida, ajustada ou revertida. O controle continua sendo seu.',
+  },
+  {
+    question: 'E se não tenho tempo agora para implementar uma coisa nova?',
+    answer:
+      'Esse é o paradoxo mais honesto do processo. A falta de tempo normalmente é causada pelos problemas que a automação resolveria. Você não precisa parar tudo para começar. A implementação pode começar pelo gargalo de maior impacto, justamente para liberar tempo.',
+  },
+  {
+    question: 'Minha operação é muito específica. Existe solução pronta para o que eu tenho?',
+    answer:
+      'Não existe solução pronta, e não é isso que a Eugen.IA oferece. Cada projeto começa pelo mapeamento do seu cenário específico, do seu stack, dos seus processos e dos seus gargalos. A especificidade da sua operação não é obstáculo. É o briefing do que precisa ser construído.',
+  },
+  {
+    question: 'Já investi em tecnologia antes e não tive retorno. Por que seria diferente aqui?',
+    answer:
+      'Essa é uma objeção legítima. Na maioria dos casos, o problema não foi a tecnologia, mas a ausência de diagnóstico antes da implementação. A Eugen.IA começa pelo mapeamento. Antes de qualquer proposta, entendemos o que está travando e só depois definimos o que construir e o impacto esperado de cada etapa. Você não decide investir no escuro.',
+  },
+  {
+    question: 'Minha empresa não tem equipe técnica. Conseguimos usar o que vocês constroem?',
+    answer:
+      'Sim. Construímos para que sua equipe atual consiga operar sem precisar chamar ninguém para o dia a dia. Negócios menores ganham proporcionalmente mais porque cada hora economizada pesa mais na operação enxuta. O tamanho da sua empresa não é uma barreira, é exatamente o perfil que mais se beneficia de uma automação bem feita.',
   },
 ]
+
+export const footerColumns = {
+  tagline: 'Automações e agentes de IA para empresas que querem parar de ser operadas pelos donos e começar a ser construídas por eles.',
+  nav: [
+    { label: 'Início', href: '/' },
+    { label: 'FAQ', href: '/#faq' },
+    { label: 'Contato', href: '/contato' },
+  ],
+  social: [
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/eugenia-agentes/', icon: 'linkedin' },
+    { label: 'Instagram', href: 'https://www.instagram.com/eugenia.agentes', icon: 'instagram' },
+    { label: 'Facebook', href: 'https://www.facebook.com/eugenia.agentesIA', icon: 'facebook' },
+  ],
+  contact: [
+    { label: 'contato@eugenia.ia.br', href: 'mailto:contato@eugenia.ia.br' },
+    { label: '(51) 99112-9452', href: 'https://api.whatsapp.com/send/?phone=5551991129452' },
+    { label: 'Atendimento remoto em todo o Brasil.', href: null },
+  ],
+  copyright: '© 2026 Eugen.IA. Todos os direitos reservados.',
+}
