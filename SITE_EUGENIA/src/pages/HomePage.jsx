@@ -1,5 +1,4 @@
 import { Button } from '../components/Button'
-import { ChatWidget } from '../components/ChatWidget'
 import { FaqList } from '../components/FaqList'
 import { MethodCards } from '../components/MethodCards'
 import { ProblemSection } from '../components/ProblemSection'
@@ -60,7 +59,6 @@ export function HomePage() {
         </div>
       </section>
 
-      <ChatWidget />
     </>
   )
 }

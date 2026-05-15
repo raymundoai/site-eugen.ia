@@ -7,6 +7,7 @@ import { GlobalCursor } from '../components/GlobalCursor'
 import { useLenis } from '../hooks/useLenis'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { ParticleField } from '../components/ParticleField'
+import { ChatWidget } from '../components/ChatWidget'
 import { AboutPage } from '../pages/AboutPage'
 import { ContactPage } from '../pages/ContactPage'
 import { FaqPage } from '../pages/FaqPage'
@@ -47,6 +48,7 @@ export function AppRouter() {
         </Routes>
       </main>
       <Footer />
+      {location.pathname !== '/contato' && <ChatWidget />}
     </>
   )
 }
