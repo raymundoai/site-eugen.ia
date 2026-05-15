@@ -913,11 +913,11 @@ main {
   border-radius: 38px;
   background:
     radial-gradient(circle at var(--cursor-x) var(--cursor-y), rgba(251, 186, 35, 0.18), transparent 24%),
-    color-mix(in oklab, var(--surface), transparent 10%);
-  border: 1px solid color-mix(in oklab, var(--line), var(--foreground) 10%);
+    var(--surface);
+  border: 1px solid color-mix(in oklab, var(--line), white 12%);
   box-shadow: var(--shadow-glass);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(18px) saturate(1.5);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
 }
 
 .manifesto-headline {
@@ -950,9 +950,9 @@ main {
   align-content: start;
   gap: 14px;
   padding: 28px 26px;
-  border: 1px solid color-mix(in oklab, var(--line), var(--foreground) 10%);
+  border: 1px solid color-mix(in oklab, var(--line), white 12%);
   border-radius: 28px;
-  background: color-mix(in oklab, var(--glass), transparent 40%);
+  background: var(--surface);
   box-shadow: var(--shadow-glass);
   backdrop-filter: blur(18px) saturate(1.5);
   -webkit-backdrop-filter: blur(18px) saturate(1.5);
