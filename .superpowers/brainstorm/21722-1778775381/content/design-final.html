@@ -1,0 +1,88 @@
+<h2>Design Final — Sistema de Partículas</h2>
+<p class="subtitle">O que você vai ver em cada seção da homepage. Aprovado isso, partimos para o plano de implementação.</p>
+
+<div class="section">
+  <h3>🌐 Campo global — a página toda</h3>
+  <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:18px;font-size:13px;color:#a5afbf;line-height:1.9;">
+    <div style="display:grid;grid-template-columns:140px 1fr;gap:8px 16px;align-items:start;">
+      <span style="color:#fbba23;font-weight:600;">Aparência</span>
+      <span>~3000 pontos dourados (#fbba23), tamanhos variados (1–2.5px), opacidade 15–40%. Ficam atrás de todo conteúdo.</span>
+      <span style="color:#fbba23;font-weight:600;">Movimento</span>
+      <span>Deriva suave aleatória. Ao passar o mouse, partículas próximas são repelidas (raio ~100px).</span>
+      <span style="color:#fbba23;font-weight:600;">Onde aparece</span>
+      <span>Somente na homepage, em todas as seções.</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>❓ Seção "Você sabe que IA é importante…"</h3>
+  <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:18px;font-size:13px;color:#a5afbf;line-height:1.9;">
+    <div style="display:grid;grid-template-columns:140px 1fr;gap:8px 16px;align-items:start;">
+      <span style="color:#fbba23;font-weight:600;">Gatilho</span>
+      <span>Usuário rola até a seção de frase digitada.</span>
+      <span style="color:#fbba23;font-weight:600;">Efeito</span>
+      <span>~800 partículas convergem e formam <strong style="color:#fffaf0;">5 pontos de interrogação</strong> distribuídos pela tela, em tamanhos variados.</span>
+      <span style="color:#fbba23;font-weight:600;">Saída</span>
+      <span>Ao sair da seção, as partículas se dispersam de volta ao movimento aleatório.</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>🛣 Seção "Mostramos o caminho mais rápido…"</h3>
+  <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:18px;font-size:13px;color:#a5afbf;line-height:1.9;">
+    <div style="display:grid;grid-template-columns:140px 1fr;gap:8px 16px;align-items:start;">
+      <span style="color:#fbba23;font-weight:600;">Gatilho</span>
+      <span>Usuário rola até a fase de texto do ServicesShowcase.</span>
+      <span style="color:#fbba23;font-weight:600;">Efeito</span>
+      <span>~800 partículas formam uma <strong style="color:#fffaf0;">estrada em perspectiva</strong> — duas linhas convergindo ao horizonte com tracejado central.</span>
+      <span style="color:#fbba23;font-weight:600;">Saída</span>
+      <span>Dispersão ao sair.</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>🎴 Bloco de animação dos serviços (3 cards)</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:12px;">
+
+    <div style="background:rgba(251,186,35,0.06);border:1px solid rgba(251,186,35,0.18);border-radius:10px;padding:14px;">
+      <div style="color:#fbba23;font-weight:700;font-size:12px;margin-bottom:8px;">01 — Consultoria</div>
+      <div style="font-size:12px;color:#a5afbf;line-height:1.7;">
+        <strong style="color:#fffaf0;">Quadro negro com checks</strong><br>
+        ~600 partículas formam um quadro escolar com 3 caixas de checklist. Os checkmarks são animados em sequência (aparecem um a um em loop).
+      </div>
+    </div>
+
+    <div style="background:rgba(251,186,35,0.06);border:1px solid rgba(251,186,35,0.18);border-radius:10px;padding:14px;">
+      <div style="color:#fbba23;font-weight:700;font-size:12px;margin-bottom:8px;">02 — Automação</div>
+      <div style="font-size:12px;color:#a5afbf;line-height:1.7;">
+        <strong style="color:#fffaf0;">Engrenagens girando</strong><br>
+        ~600 partículas formam 2 engrenagens interligadas. Uma gira no sentido horário, outra anti-horário. Rotação contínua e suave.
+      </div>
+    </div>
+
+    <div style="background:rgba(251,186,35,0.06);border:1px solid rgba(251,186,35,0.18);border-radius:10px;padding:14px;">
+      <div style="color:#fbba23;font-weight:700;font-size:12px;margin-bottom:8px;">03 — Agentes IA</div>
+      <div style="font-size:12px;color:#a5afbf;line-height:1.7;">
+        <strong style="color:#fffaf0;">Cabeça de robô</strong><br>
+        ~600 partículas formam silhueta de robô — cabeça quadrada, viseira, antena. Partículas pulsam levemente para dar vida.
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:14px;margin-top:14px;font-size:12px;color:#a5afbf;line-height:1.7;">
+    <strong style="color:#fffaf0;">Montagem:</strong> quando o usuário rola e ativa um serviço, as partículas que estavam espalhadas pelo card convergem e formam o desenho. Ao trocar de serviço, dispersam e remontam a nova shape.
+  </div>
+</div>
+
+<div class="section">
+  <h3>📱 Mobile</h3>
+  <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:14px;font-size:12px;color:#a5afbf;">
+    Campo global desabilitado em telas &lt; 768px e para usuários com <code>prefers-reduced-motion</code>. Service cards mostram versão simplificada estática.
+  </div>
+</div>
+
+<p style="font-size:13px;color:#576174;margin-top:20px;">Tudo certo? Responde no terminal e partimos para o plano de implementação.</p>

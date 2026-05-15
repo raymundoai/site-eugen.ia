@@ -1,26 +1,25 @@
 import { useEffect, useState } from 'react'
 
+function shouldEnableCursor() {
+  if (typeof window === 'undefined') return false
+  const isDesktop = window.matchMedia('(min-width: 1024px)').matches
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  return isDesktop && !reducedMotion
+}
+
 export function useCustomCursor() {
-  const [enabled, setEnabled] = useState(false)
+  const [enabled] = useState(shouldEnableCursor)
   const [position, setPosition] = useState({ x: -100, y: -100 })
   const [mode, setMode] = useState('default')
 
   useEffect(() => {
-    const isDesktop = window.matchMedia('(min-width: 1024px)').matches
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-
-    const shouldEnable = isDesktop && !reducedMotion
-    setEnabled(shouldEnable)
-
-    if (shouldEnable) {
+    if (enabled) {
       document.documentElement.classList.add('cursor-hidden')
     } else {
       document.documentElement.classList.remove('cursor-hidden')
     }
 
-    if (!isDesktop || reducedMotion) {
-      return undefined
-    }
+    if (!enabled) return undefined
 
     const onMove = (event) => {
       setPosition({ x: event.clientX, y: event.clientY })
@@ -39,11 +38,7 @@ export function useCustomCursor() {
       document.removeEventListener('mouseover', onOver)
       document.documentElement.classList.remove('cursor-hidden')
     }
-  }, [])
+  }, [enabled])
 
-  return {
-    enabled,
-    position,
-    mode,
-  }
+  return { enabled, position, mode }
 }

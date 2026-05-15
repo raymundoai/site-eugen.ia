@@ -1,34 +1,40 @@
-# SITE_EUGENIA
+# Site Eugen.IA
 
-Código-fonte do frontend atualmente publicado em `www.eugenia.ia.br`.
+Nova versão local do frontend da Eugen.IA.
 
 ## Stack
 
 - React
 - Vite
+- JSX/JavaScript
+- CSS global
 - React Router
-- GSAP
+- GSAP ScrollTrigger
 - Lenis
+- Lucide React
 
 ## Scripts
 
 ```bash
 npm run dev
-npm run build
-npm run preview
 npm run lint
+npm run build
+npm run build -- --outDir ../deploy
 ```
 
-## Build para deploy
+## Estrutura
 
-Para gerar o artefato usado na AWS:
+- `src/data/siteContent.js`: copy e conteúdo estruturado
+- `src/components/`: componentes visuais e interativos
+- `src/contexts/`: providers de tema e chat
+- `src/hooks/`: Lenis, cursor e reveal
+- `src/pages/`: rotas compatíveis
+- `src/utils/chatPayload.js`: contrato do webhook n8n
+
+## Deploy
+
+O build de publicação deve ser gerado na pasta raiz `deploy/`:
 
 ```bash
 npm run build -- --outDir ../deploy
 ```
-
-O diretório `../deploy` contém o bundle estático e o script de publicação em S3 + CloudFront.
-
-## Escopo
-
-Este projeto contém apenas o frontend. A automação da Eugênia e quaisquer integrações de agente vivem em outro repositório.

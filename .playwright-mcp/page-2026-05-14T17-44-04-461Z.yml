@@ -1,0 +1,145 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - link "Eugen.IA" [ref=e5]:
+      - /url: /
+      - generic [ref=e6]: Eugen.IA
+    - navigation "Navegação principal" [ref=e7]:
+      - link "Início" [ref=e8]:
+        - /url: /
+      - link "Perguntas Frequentes" [ref=e9]:
+        - /url: /#faq
+      - link "Contato" [ref=e10]:
+        - /url: /contato
+    - generic [ref=e11]:
+      - button "Alternar tema" [ref=e12]:
+        - img [ref=e13]
+      - link "Falar com a Eugênia" [ref=e15]:
+        - /url: /contato
+  - main [ref=e16]:
+    - generic [ref=e19]:
+      - paragraph [ref=e20]: Automação de Processos & Agentes IA
+      - heading "Mapeamos seus processos e desenvolvemos Agentes de IA sob medida para sua empresa" [level=1] [ref=e21]:
+        - text: Mapeamos seus processos e desenvolvemos
+        - strong [ref=e22]: Agentes de IA
+        - generic [ref=e23]: sob medida para sua empresa
+      - link "Falar com a Eugênia" [ref=e24]:
+        - /url: /contato
+        - generic [ref=e25]: Falar com a Eugênia
+        - img [ref=e26]
+    - heading "Você sabe que IA é importante mas não sabe como aproveitar todo o potencial da tecnologia?" [level=2] [ref=e33]
+    - generic [ref=e36]:
+      - generic [ref=e39]:
+        - paragraph [ref=e40]: O que fazemos
+        - heading "Mostramos o caminho mais rápido para sua empresa inovar e crescer com Inteligência Artificial." [level=2] [ref=e41]
+      - generic [ref=e43]:
+        - generic "Serviços" [ref=e44]:
+          - link "01 Consultoria e Treinamento" [ref=e45]:
+            - /url: "#service-01"
+            - generic [ref=e46]: "01"
+            - text: Consultoria e Treinamento
+          - link "02 Automação de Processos" [ref=e47]:
+            - /url: "#service-02"
+            - generic [ref=e48]: "02"
+            - text: Automação de Processos
+          - link "03 Agentes de IA" [ref=e49]:
+            - /url: "#service-03"
+            - generic [ref=e50]: "03"
+            - text: Agentes de IA
+        - generic [ref=e51]:
+          - generic [ref=e53]:
+            - article [ref=e54]:
+              - generic [ref=e55]: "01"
+              - heading "Consultoria e Treinamento" [level=3] [ref=e56]
+              - paragraph [ref=e57]: Clareza antes de qualquer ferramenta.
+              - paragraph [ref=e58]: Mapeamos os gargalos reais da sua operação, definimos prioridades e capacitamos a sua equipe para operar com IA.
+            - article [ref=e59]:
+              - generic [ref=e60]: "02"
+              - heading "Automação de Processos" [level=3] [ref=e61]
+              - paragraph [ref=e62]: Processos que rodam sozinhos.
+              - paragraph [ref=e63]: Horas devolvidas para decisão, relacionamento e crescimento. Sua equipe para de apagar incêndio e começa a evoluir.
+            - article [ref=e64]:
+              - generic [ref=e65]: "03"
+              - heading "Agentes de IA" [level=3] [ref=e66]
+              - paragraph [ref=e67]: Sua operação, aumentada por IA.
+              - paragraph [ref=e68]: Agentes personalizados, conectados ao seu stack, executando tarefas de forma autônoma, segura e rastreável.
+          - generic [ref=e77]:
+            - img [ref=e78]
+            - generic [ref=e81]: Consultoria e Treinamento
+    - generic [ref=e88]:
+      - article [ref=e89]:
+        - button "Quem é a Eugen.IA?" [ref=e90]:
+          - generic [ref=e91]: Quem é a Eugen.IA?
+          - img [ref=e92]
+        - generic:
+          - paragraph [ref=e94]: "A Eugen.IA nasceu de um lugar muito específico: 11 anos operando negócios físicos e digitais no Brasil, vendo de perto o quanto uma operação desorganizada consome o tempo de quem deveria estar crescendo."
+          - paragraph [ref=e95]: A maioria das empresas que chega até nós passa pelo mesmo ciclo. Adotam ferramentas antes de entender o gargalo. Implementam soluções sem mapear o processo. Gastam em tecnologia e ficam sem retorno. O problema nunca foi a ferramenta. Foi a falta de diagnóstico antes dela.
+          - paragraph [ref=e96]: Acreditamos que IA bem implementada começa pelo mapeamento. Antes de qualquer proposta, entendemos o que está travando, priorizamos o que gera impacto real e construímos soluções que a sua equipe atual consegue operar.
+          - paragraph [ref=e97]: Somos uma agência de implementação, construída por quem conhece a operação por dentro. Nosso método de trabalho é baseado no Design Sprint do Google, adaptado para a realidade das PMEs brasileiras. Resultado visível desde o primeiro mês, escopo fechado antes do desenvolvimento começar e entrega em torno de 7-15 dias.
+          - paragraph [ref=e98]: Não prometemos resultado. Garantimos ele.
+      - article [ref=e99]:
+        - button "Já investi em tecnologia antes e não tive retorno. Por que seria diferente aqui?" [ref=e100]:
+          - generic [ref=e101]: Já investi em tecnologia antes e não tive retorno. Por que seria diferente aqui?
+          - img [ref=e102]
+        - paragraph [ref=e104]: Essa é uma objeção legítima. Na maioria dos casos, o problema não foi a tecnologia, mas a ausência de diagnóstico antes da implementação. A Eugen.IA começa pelo mapeamento. Antes de qualquer proposta, entendemos o que está travando e só depois definimos o que construir e o impacto esperado de cada etapa. Você não decide investir no escuro.
+      - article [ref=e105]:
+        - button "E se não tenho tempo agora para implementar uma coisa nova?" [ref=e106]:
+          - generic [ref=e107]: E se não tenho tempo agora para implementar uma coisa nova?
+          - img [ref=e108]
+        - paragraph [ref=e110]: Esse é o paradoxo mais honesto do processo. A falta de tempo normalmente é causada pelos problemas que a automação resolveria. Você não precisa parar tudo para começar. A implementação pode começar pelo gargalo de maior impacto, justamente para liberar tempo.
+      - article [ref=e111]:
+        - button "IA substitui minha equipe?" [ref=e112]:
+          - generic [ref=e113]: IA substitui minha equipe?
+          - img [ref=e114]
+        - paragraph [ref=e116]: Não é o objetivo e não é o que acontece na prática. IA bem implementada reduz tarefas repetitivas para que sua equipe passe a fazer o que exige julgamento, relacionamento e decisão humana. A questão não é substituição. É redirecionamento.
+      - article [ref=e117]:
+        - button "Não vou perder o controle ao automatizar processos?" [ref=e118]:
+          - generic [ref=e119]: Não vou perder o controle ao automatizar processos?
+          - img [ref=e120]
+        - paragraph [ref=e122]: Esse medo é comum e faz sentido. Automatizar não é abrir mão do controle. É transformar processos manuais e sujeitos a erro em fluxos rastreáveis, documentados e auditáveis. Qualquer automação que construímos pode ser interrompida, ajustada ou revertida. O controle continua sendo seu.
+      - article [ref=e123]:
+        - button "Minha operação é muito específica. Existe solução pronta para o que eu tenho?" [ref=e124]:
+          - generic [ref=e125]: Minha operação é muito específica. Existe solução pronta para o que eu tenho?
+          - img [ref=e126]
+        - paragraph [ref=e128]: Não existe solução pronta, e não é isso que a Eugen.IA oferece. Cada projeto começa pelo mapeamento do seu cenário específico, do seu stack, dos seus processos e dos seus gargalos. A especificidade da sua operação não é obstáculo. É o briefing do que precisa ser construído.
+      - article [ref=e129]:
+        - button "Qual o investimento?" [ref=e130]:
+          - generic [ref=e131]: Qual o investimento?
+          - img [ref=e132]
+        - paragraph [ref=e134]: "Depende do escopo e todo projeto é sob medida. Depois de mapear sua operação, você recebe uma proposta com escopo claro, entregáveis definidos e investimento transparente. A pergunta mais útil antes do preço costuma ser outra: quanto custa manter a operação do jeito que está por mais 6 meses?"
+      - article [ref=e135]:
+        - button "Minha empresa não tem equipe técnica. Conseguimos usar o que vocês constroem?" [ref=e136]:
+          - generic [ref=e137]: Minha empresa não tem equipe técnica. Conseguimos usar o que vocês constroem?
+          - img [ref=e138]
+        - paragraph [ref=e140]: Sim. Construímos para que sua equipe atual consiga operar sem precisar chamar ninguém para o dia a dia. Negócios menores ganham proporcionalmente mais porque cada hora economizada pesa mais na operação enxuta. O tamanho da sua empresa não é uma barreira, é exatamente o perfil que mais se beneficia de uma automação bem feita.
+    - button "Falar com a Eugênia" [ref=e143]
+  - contentinfo [ref=e144]:
+    - generic [ref=e145]:
+      - generic [ref=e146]:
+        - heading "Eugen.IA" [level=2] [ref=e147]
+        - paragraph [ref=e148]: Automações e agentes de IA para empresas que querem parar de ser operadas pelos donos e começar a ser construídas por eles.
+        - generic [ref=e149]:
+          - link "LinkedIn" [ref=e150]:
+            - /url: https://www.linkedin.com/company/eugenia-agentes/
+            - img [ref=e151]
+          - link "Instagram" [ref=e155]:
+            - /url: https://www.instagram.com/eugenia.agentes
+            - img [ref=e156]
+          - link "Facebook" [ref=e159]:
+            - /url: https://www.facebook.com/eugenia.agentesIA
+            - img [ref=e160]
+      - generic [ref=e162]:
+        - heading "Navegação" [level=3] [ref=e163]
+        - link "Início" [ref=e164]:
+          - /url: /
+        - link "FAQ" [ref=e165]:
+          - /url: /#faq
+        - link "Contato" [ref=e166]:
+          - /url: /contato
+      - generic [ref=e167]:
+        - heading "Contato" [level=3] [ref=e168]
+        - link "contato@eugenia.ia.br" [ref=e169]:
+          - /url: mailto:contato@eugenia.ia.br
+        - link "(51) 99112-9452" [ref=e170]:
+          - /url: https://api.whatsapp.com/send/?phone=5551991129452
+        - paragraph [ref=e171]: Atendimento remoto em todo o Brasil.
+    - generic [ref=e172]: © 2026 Eugen.IA. Todos os direitos reservados.

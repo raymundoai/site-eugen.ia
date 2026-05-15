@@ -1,0 +1,115 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "Eugen.IA - Página inicial" [ref=e6]:
+        - /url: /
+        - generic [ref=e7]: Eugen.IA
+      - navigation "Menu principal" [ref=e8]:
+        - link "Início" [ref=e9]:
+          - /url: /
+        - link "Serviços" [ref=e10]:
+          - /url: /servicos
+        - link "Sobre" [ref=e11]:
+          - /url: /sobre
+        - link "FAQ" [ref=e12]:
+          - /url: /faq
+        - link "Contato" [ref=e13]:
+          - /url: /contato
+      - generic [ref=e14]:
+        - 'button "Alternar tema. Atual: system (light)" [ref=e15]':
+          - img [ref=e17]
+          - img [ref=e21]
+          - generic [ref=e23]: Tema diurno ativo
+        - link "Diagnóstico gratuito" [ref=e24]:
+          - /url: /contato
+    - generic [ref=e26]:
+      - link "Início" [ref=e27]:
+        - /url: /
+      - link "Serviços" [ref=e28]:
+        - /url: /servicos
+      - link "Sobre" [ref=e29]:
+        - /url: /sobre
+      - link "FAQ" [ref=e30]:
+        - /url: /faq
+      - link "Contato" [ref=e31]:
+        - /url: /contato
+      - link "Diagnóstico gratuito" [ref=e32]:
+        - /url: /contato
+  - main [ref=e33]:
+    - generic [ref=e35]:
+      - paragraph [ref=e36]: Contato
+      - heading "Fale com a Eugênia." [level=1] [ref=e37]
+      - paragraph [ref=e38]: Em poucos minutos a Eugênia mapeia seu cenário e agenda o diagnóstico gratuito com nosso time. Sem formulário. Sem espera. Sem compromisso.
+    - generic [ref=e40]:
+      - complementary [ref=e41]:
+        - paragraph [ref=e42]: Contato
+        - heading "A conversa ao lado é o caminho mais rápido." [level=2] [ref=e43]
+        - paragraph [ref=e44]: A Eugênia coleta o contexto da sua operação, qualifica o cenário e já encaminha tudo para o nosso time sem formulário, sem espera, sem você precisar repetir nada depois.
+        - generic [ref=e45]:
+          - heading "Prefere contato direto?" [level=3] [ref=e46]
+          - list [ref=e47]:
+            - listitem [ref=e48]:
+              - strong [ref=e49]: E-mail
+              - link "contato@eugenia.ia.br" [ref=e50]:
+                - /url: mailto:contato@eugenia.ia.br
+            - listitem [ref=e51]:
+              - strong [ref=e52]: WhatsApp
+              - link "(51) 99112-9452" [ref=e53]:
+                - /url: https://api.whatsapp.com/send/?phone=5551991129452
+            - listitem [ref=e54]:
+              - strong [ref=e55]: Atendimento
+              - generic [ref=e56]: 100% remoto para todo o Brasil
+      - generic [ref=e58]:
+        - log [ref=e59]
+        - generic [ref=e60]:
+          - generic [ref=e61]: Resposta da conversa
+          - textbox "Resposta da conversa" [disabled] [ref=e62]:
+            - /placeholder: Digite sua mensagem
+          - button "ENVIAR" [disabled] [ref=e63]
+        - generic [ref=e65]:
+          - checkbox "Autorizo o armazenamento e uso das informações para contato comercial, conforme a LGPD." [checked] [ref=e66]
+          - generic [ref=e67]: Autorizo o armazenamento e uso das informações para contato comercial, conforme a LGPD.
+  - contentinfo [ref=e68]:
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - heading "Eugen.IA" [level=3] [ref=e71]
+        - paragraph [ref=e72]: Automações e agentes de IA para que e-commerces parem de ser operados pelos donos e comecem a ser construídos por eles.
+        - generic "Redes sociais da Eugen.IA" [ref=e73]:
+          - link "LinkedIn da Eugen.IA" [ref=e74]:
+            - /url: https://www.linkedin.com/company/eugenia-agentes/
+            - img [ref=e75]
+          - link "Facebook da Eugen.IA" [ref=e79]:
+            - /url: https://www.facebook.com/eugenia.agentesIA
+            - img [ref=e80]
+          - link "Instagram da Eugen.IA" [ref=e82]:
+            - /url: https://www.instagram.com/eugenia.agentes
+            - img [ref=e83]
+      - generic [ref=e86]:
+        - heading "Navegação" [level=4] [ref=e87]
+        - list [ref=e88]:
+          - listitem [ref=e89]:
+            - link "Início" [ref=e90]:
+              - /url: /
+          - listitem [ref=e91]:
+            - link "Serviços" [ref=e92]:
+              - /url: /servicos
+          - listitem [ref=e93]:
+            - link "Sobre" [ref=e94]:
+              - /url: /sobre
+          - listitem [ref=e95]:
+            - link "FAQ" [ref=e96]:
+              - /url: /faq
+          - listitem [ref=e97]:
+            - link "Contato" [ref=e98]:
+              - /url: /contato
+      - generic [ref=e99]:
+        - heading "Contato" [level=4] [ref=e100]
+        - list [ref=e101]:
+          - listitem [ref=e102]:
+            - link "contato@eugenia.ia.br" [ref=e103]:
+              - /url: mailto:contato@eugenia.ia.br
+          - listitem [ref=e104]:
+            - link "(51) 99112-9452" [ref=e105]:
+              - /url: https://api.whatsapp.com/send/?phone=5551991129452
+          - listitem [ref=e106]: Atendimento remoto em todo o Brasil
+    - generic [ref=e107]: © 2026 Eugen.IA. Todos os direitos reservados.

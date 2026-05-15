@@ -1,0 +1,88 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - link "Eugen.IA" [ref=e5]:
+      - /url: /
+      - generic [ref=e6]: Eugen.IA
+    - navigation "Navegação principal" [ref=e7]:
+      - link "Início" [ref=e8]:
+        - /url: /
+      - link "Perguntas Frequentes" [ref=e9]:
+        - /url: /faq
+      - link "Contato" [ref=e10]:
+        - /url: /contato
+    - generic [ref=e11]:
+      - button "Alternar tema" [ref=e12]:
+        - img [ref=e13]
+      - link "Falar com a Eugênia" [ref=e15]:
+        - /url: /contato
+  - main [ref=e16]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - paragraph [ref=e20]: O que fazemos
+        - heading "Mostramos o caminho mais rápido para sua empresa inovar e crescer com Inteligência Artificial." [level=2] [ref=e21]
+      - generic "Serviços" [ref=e22]:
+        - link "01 Consultoria Estratégica" [ref=e23]:
+          - /url: "#service-01"
+          - generic [ref=e24]: "01"
+          - text: Consultoria Estratégica
+        - link "02 Automação de Processos" [ref=e25]:
+          - /url: "#service-02"
+          - generic [ref=e26]: "02"
+          - text: Automação de Processos
+        - link "03 Agentes de IA Personalizados" [ref=e27]:
+          - /url: "#service-03"
+          - generic [ref=e28]: "03"
+          - text: Agentes de IA Personalizados
+      - generic [ref=e29]:
+        - generic [ref=e31]:
+          - article [ref=e32]:
+            - generic [ref=e33]: "01"
+            - heading "Consultoria Estratégica" [level=3] [ref=e34]
+            - paragraph [ref=e35]: Clareza antes de investimento.
+            - paragraph [ref=e36]: Mostramos o que automatizar e por onde começar.
+          - article [ref=e37]:
+            - generic [ref=e38]: "02"
+            - heading "Automação de Processos" [level=3] [ref=e39]
+            - paragraph [ref=e40]: Processos que rodam sozinhos.
+            - paragraph [ref=e41]: Horas devolvidas para decisão e estratégia.
+          - article [ref=e42]:
+            - generic [ref=e43]: "03"
+            - heading "Agentes de IA Personalizados" [level=3] [ref=e44]
+            - paragraph [ref=e45]: Conectamos a IA com suas ferramentas.
+            - paragraph [ref=e46]: Treinamos ela para realizar tarefas de forma autônoma, personalizada e segura.
+        - generic [ref=e47]:
+          - generic [ref=e48]:
+            - generic [ref=e49]:
+              - img [ref=e50]
+              - text: "01"
+            - generic [ref=e64]:
+              - img [ref=e65]
+              - text: "02"
+            - generic [ref=e80]:
+              - img [ref=e81]
+              - text: "03"
+          - generic [ref=e104]:
+            - img [ref=e105]
+            - generic [ref=e108]: Consultoria Estratégica
+    - button "Falar com a Eugênia" [ref=e110]
+  - contentinfo [ref=e111]:
+    - generic [ref=e112]:
+      - generic [ref=e113]:
+        - heading "Eugen.IA" [level=2] [ref=e114]
+        - paragraph [ref=e115]: Diagnóstico e implementação de Agentes de IA para empresas que querem resultado e inovação de verdade.
+      - generic [ref=e116]:
+        - heading "Navegação" [level=3] [ref=e117]
+        - link "Início" [ref=e118]:
+          - /url: /
+        - link "Sobre" [ref=e119]:
+          - /url: /sobre
+        - link "FAQ" [ref=e120]:
+          - /url: /faq
+        - link "Contato" [ref=e121]:
+          - /url: /contato
+      - generic [ref=e122]:
+        - heading "Contato" [level=3] [ref=e123]
+        - paragraph [ref=e124]: contato@eugenia.ia.br
+        - paragraph [ref=e125]: (51) 99112-9452
+        - paragraph [ref=e126]: Atendimento remoto em todo o Brasil.
+    - generic [ref=e127]: © 2026 Eugen.IA. Todos os direitos reservados.

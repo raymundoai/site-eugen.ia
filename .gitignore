@@ -1,7 +1,10 @@
-.env
-.env.*
 node_modules/
 dist/
+.env
+.env.local
+.DS_Store
+*.log
+audit/
+backup/
 SITE_EUGENIA/node_modules/
 SITE_EUGENIA/dist/
-SITE_EUGENIA/.env.local

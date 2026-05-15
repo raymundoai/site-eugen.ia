@@ -1,26 +1,3 @@
-// Reservoir sampling com jitter sub-pixel para evitar alinhamento em grade.
-function samplePixels(off, w, h, count) {
-  const ctx = off.getContext('2d')
-  const data = ctx.getImageData(0, 0, w, h).data
-  const result = []
-  let k = 0
-  const step = 2
-  for (let y = 0; y < h; y += step) {
-    for (let x = 0; x < w; x += step) {
-      if (data[(y * w + x) * 4 + 3] > 128) {
-        k++
-        const pt = { x: x + (Math.random() - 0.5) * step, y: y + (Math.random() - 0.5) * step }
-        if (result.length < count) {
-          result.push(pt)
-        } else {
-          const j = (Math.random() * k) | 0
-          if (j < count) result[j] = pt
-        }
-      }
-    }
-  }
-  return result
-}
 
 // Amostra apenas pixels de borda (adjacentes a pixels transparentes) — dá contornos nítidos.
 function sampleEdgePixels(off, w, h, count) {

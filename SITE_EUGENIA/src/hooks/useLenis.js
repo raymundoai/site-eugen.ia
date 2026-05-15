@@ -1,20 +1,15 @@
 import { useEffect } from 'react'
 import Lenis from 'lenis'
 
-export function useLenis(enabled = true) {
+export function useLenis() {
   useEffect(() => {
-    if (!enabled || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      return undefined
-    }
-
     const lenis = new Lenis({
-      duration: 1.05,
+      lerp: 0.09,
       smoothWheel: true,
-      wheelMultiplier: 0.95,
-      touchMultiplier: 1,
+      wheelMultiplier: 0.9,
     })
 
-    let rafId
+    let rafId = 0
     const raf = (time) => {
       lenis.raf(time)
       rafId = requestAnimationFrame(raf)
@@ -26,5 +21,5 @@ export function useLenis(enabled = true) {
       cancelAnimationFrame(rafId)
       lenis.destroy()
     }
-  }, [enabled])
+  }, [])
 }

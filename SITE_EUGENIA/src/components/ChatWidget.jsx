@@ -97,7 +97,11 @@ function ChatPanel({ floating = false, onClose }) {
         isTyping: false,
         sendError: '',
         agentStatus: data.status || 'active',
-        lead: { ...current.lead, ...(data.lead_updates || {}) },
+        lead: { ...current.lead, ...Object.fromEntries(
+          Object.entries(data.lead_updates || {}).filter(([k]) =>
+            ['name','email','phone','company','segment','monthly_volume','urgency','main_pain'].includes(k)
+          )
+        ) },
         conversation: [...nextConversation, assistant],
       }))
     } catch {

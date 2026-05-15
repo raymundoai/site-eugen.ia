@@ -1,7 +1,7 @@
 let messageCounter = 0
 
 export function buildChatPayload({ sessionId, route, message, lead, conversation, intent, consent, widgetVariant }) {
-  messageCounter++
+  messageCounter += 1
 
   return {
     source: 'site_chat',

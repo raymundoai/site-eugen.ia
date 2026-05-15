@@ -1,0 +1,60 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - link "Eugen.IA" [ref=e5]:
+      - /url: /
+      - generic [ref=e6]: Eugen.IA
+    - navigation "Navegação principal" [ref=e7]:
+      - link "Início" [ref=e8]:
+        - /url: /
+      - link "Perguntas Frequentes" [ref=e9]:
+        - /url: /faq
+      - link "Contato" [ref=e10]:
+        - /url: /contato
+    - generic [ref=e11]:
+      - button "Alternar tema" [ref=e12]:
+        - img [ref=e13]
+      - link "Falar com a Eugênia" [ref=e15]:
+        - /url: /contato
+  - main [ref=e16]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - paragraph [ref=e20]: Próximo passo
+        - heading "Sua operação pode ser mais leve do que você imagina. Fale com a Eugênia, o diagnóstico é gratuito." [level=1] [ref=e21]
+        - paragraph [ref=e22]: "Aviso: Atendemos poucos projetos por vez, intencionalmente. Para garantir atenção real em cada operação."
+      - generic [ref=e24]:
+        - generic [ref=e26]:
+          - img [ref=e27]
+          - text: Eugen.IA
+        - log [ref=e29]:
+          - paragraph [ref=e32]: Ola! Eu sou a Eugenia.
+          - paragraph [ref=e35]: Voce montou esse negocio pra ter liberdade. Me diz qual parte da operacao ainda nao deixa?
+        - generic [ref=e36]:
+          - generic [ref=e37]: Resposta da conversa
+          - textbox "Resposta da conversa" [ref=e38]:
+            - /placeholder: Digite sua mensagem
+          - button "Enviar" [disabled] [ref=e39]:
+            - img [ref=e40]
+        - generic [ref=e43]:
+          - checkbox "Autorizo o armazenamento e uso das informacoes para contato comercial, conforme a LGPD." [checked] [ref=e44]
+          - generic [ref=e45]: Autorizo o armazenamento e uso das informacoes para contato comercial, conforme a LGPD.
+  - contentinfo [ref=e46]:
+    - generic [ref=e47]:
+      - generic [ref=e48]:
+        - heading "Eugen.IA" [level=2] [ref=e49]
+        - paragraph [ref=e50]: Diagnóstico e implementação de Agentes de IA para empresas que querem resultado e inovação de verdade.
+      - generic [ref=e51]:
+        - heading "Navegação" [level=3] [ref=e52]
+        - link "Início" [ref=e53]:
+          - /url: /
+        - link "Sobre" [ref=e54]:
+          - /url: /sobre
+        - link "FAQ" [ref=e55]:
+          - /url: /faq
+        - link "Contato" [ref=e56]:
+          - /url: /contato
+      - generic [ref=e57]:
+        - heading "Contato" [level=3] [ref=e58]
+        - paragraph [ref=e59]: contato@eugenia.ia.br
+        - paragraph [ref=e60]: (51) 99112-9452
+        - paragraph [ref=e61]: Atendimento remoto em todo o Brasil.
+    - generic [ref=e62]: © 2026 Eugen.IA. Todos os direitos reservados.
