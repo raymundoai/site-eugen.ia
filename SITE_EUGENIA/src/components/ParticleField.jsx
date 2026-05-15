@@ -10,6 +10,7 @@ const MORPH_N    = 1200   // partículas usadas para forming shapes
 const TAU        = Math.PI * 2
 const OPA        = [0.15, 0.25, 0.38]
 const GOLD       = '251,186,35'
+const BLUE       = '76,118,190'
 const MOUSE_R    = 100
 const MOUSE_R2   = MOUSE_R * MOUSE_R
 
@@ -24,6 +25,13 @@ export function ParticleField() {
     let H = window.innerHeight
     canvas.width = W
     canvas.height = H
+
+    const isLight = () => document.documentElement.dataset.theme === 'light'
+    let particleColor = isLight() ? BLUE : GOLD
+    const themeObserver = new MutationObserver(() => {
+      particleColor = isLight() ? BLUE : GOLD
+    })
+    themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] })
 
     const px  = new Float32Array(N)
     const py  = new Float32Array(N)
@@ -97,7 +105,7 @@ export function ParticleField() {
 
       for (let b = 0; b < 3; b++) {
         ctx.beginPath()
-        ctx.fillStyle = `rgba(${GOLD},${OPA[b]})`
+        ctx.fillStyle = `rgba(${particleColor},${OPA[b]})`
         for (let i = 0; i < N; i++) {
           if (bkt[i] === b) {
             ctx.moveTo(px[i] + rad[i], py[i])
@@ -206,6 +214,7 @@ export function ParticleField() {
 
     return () => {
       cancelAnimationFrame(raf)
+      themeObserver.disconnect()
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('resize', onResize)
       st1.kill()
