@@ -954,6 +954,8 @@ main {
   border-radius: 28px;
   background: color-mix(in oklab, var(--surface), transparent 10%);
   box-shadow: var(--shadow-base);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
