@@ -1073,28 +1073,97 @@ main {
   gap: 22px;
 }
 
-.contact-page {
-  min-height: 100svh;
-  display: grid;
-  align-items: center;
+.contact-hero {
   padding-top: 150px;
+}
+
+.contact-hero h1 {
+  font-size: clamp(2rem, 4vw, 4.2rem);
+  font-weight: 800;
+  margin: 8px 0 16px;
+}
+
+.contact-hero > .container > p:last-child {
+  color: var(--muted);
+  max-width: 560px;
+}
+
+.contact-page {
+  padding-top: 0;
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.74fr);
   gap: clamp(34px, 6vw, 86px);
-  align-items: center;
+  align-items: start;
 }
 
 .contact-copy {
   display: grid;
-  gap: 22px;
+  gap: 20px;
 }
 
-.contact-copy p {
+.contact-copy h2 {
+  font-size: clamp(1.3rem, 2.2vw, 2.2rem);
+  font-weight: 700;
+}
+
+.contact-copy > p {
   color: var(--muted);
   font-size: 1rem;
+  line-height: 1.65;
+}
+
+.contact-direct {
+  display: grid;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.contact-direct h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.contact-direct ul {
+  display: grid;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-direct li {
+  display: grid;
+  gap: 2px;
+}
+
+.contact-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.contact-direct a,
+.contact-direct span:not(.contact-label) {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.contact-direct a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.contact-direct a:hover {
+  text-decoration: underline;
 }
 
 .chat-floating-shell {
