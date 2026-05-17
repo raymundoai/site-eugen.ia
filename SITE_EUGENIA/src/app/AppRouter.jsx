@@ -8,7 +8,6 @@ import { useLenis } from '../hooks/useLenis'
 import { useScrollReveal } from '../hooks/useScrollReveal'
 import { ParticleField } from '../components/ParticleField'
 import { ChatWidget } from '../components/ChatWidget'
-import { AboutPage } from '../pages/AboutPage'
 import { ContactPage } from '../pages/ContactPage'
 import { FaqPage } from '../pages/FaqPage'
 import { HomePage } from '../pages/HomePage'
@@ -40,7 +39,6 @@ export function AppRouter() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/servicos" element={<ServicesPage />} />
-          <Route path="/sobre" element={<AboutPage />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/contato" element={<ContactPage />} />
           <Route path="/obrigado" element={<ThanksPage />} />

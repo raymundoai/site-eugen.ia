@@ -10,10 +10,17 @@ export function useTypewriterScroll(ref, { start = 'top 78%', end = 'center 55%'
     const ctx = gsap.context(() => {
       const chars = ref.current.querySelectorAll('.tw-char')
       if (!chars.length) return
-      const tl = gsap.timeline({
-        scrollTrigger: { trigger: ref.current, start, end, scrub },
+
+      const mm = gsap.matchMedia()
+
+      // Efeito de digitação apenas no desktop
+      mm.add('(min-width: 769px)', () => {
+        const tl = gsap.timeline({
+          scrollTrigger: { trigger: ref.current, start, end, scrub, invalidateOnRefresh: true },
+        })
+        tl.from(chars, { opacity: 0, stagger: { each: 0.04, from: 'start' }, duration: 0.08, ease: 'none' })
+        return () => tl.kill()
       })
-      tl.from(chars, { opacity: 0, stagger: { each: 0.04, from: 'start' }, duration: 0.08, ease: 'none' })
     }, ref)
     return () => ctx.revert()
   }, [])

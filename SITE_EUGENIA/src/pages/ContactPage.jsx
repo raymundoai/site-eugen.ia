@@ -18,7 +18,9 @@ export function ContactPage() {
         <div className="container contact-grid">
           <aside className="contact-copy" data-reveal>
             <p className="eyebrow">Contato</p>
-            <h2>A conversa ao lado é o caminho mais rápido.</h2>
+            <h2>
+              A conversa <span className="contact-position-desktop">ao lado</span><span className="contact-position-mobile">abaixo</span> é o caminho mais rápido.
+            </h2>
             <p>
               A Eugênia coleta o contexto da sua operação, qualifica o cenário e já encaminha tudo para o nosso
               time sem formulário, sem espera, sem você precisar repetir nada depois.

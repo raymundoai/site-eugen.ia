@@ -201,17 +201,20 @@ export function ParticleField() {
       setShape(buildSvcShape(idx))
     }
 
-    const st3 = ScrollTrigger.create({
-      trigger: '.showcase-cards-phase',
-      start: 'top top',
-      end: 'bottom bottom',
-      scrub: true,
-      onEnter:     () => showService(0),
-      onEnterBack: () => showService(2),
-      onLeave:     () => { clearShape(); lastSvcIdx = -1 },
-      onLeaveBack: () => { clearShape(); lastSvcIdx = -1 },
-      onUpdate:    (self) => showService(Math.min(2, Math.floor(self.progress * 3))),
-    })
+    let st3
+    if (!window.matchMedia('(max-width: 768px)').matches) {
+      st3 = ScrollTrigger.create({
+        trigger: '.showcase-cards-phase',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: true,
+        onEnter:     () => showService(0),
+        onEnterBack: () => showService(2),
+        onLeave:     () => { clearShape(); lastSvcIdx = -1 },
+        onLeaveBack: () => { clearShape(); lastSvcIdx = -1 },
+        onUpdate:    (self) => showService(Math.min(2, Math.floor(self.progress * 3))),
+      })
+    }
 
     return () => {
       cancelAnimationFrame(raf)
@@ -220,7 +223,7 @@ export function ParticleField() {
       window.removeEventListener('resize', onResize)
       st1.kill()
       st2.kill()
-      st3.kill()
+      st3?.kill()
     }
   }, [])
 

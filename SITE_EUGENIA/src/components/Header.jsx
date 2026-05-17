@@ -1,9 +1,11 @@
+import { useState } from 'react'
 import { Moon, Sun } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
 import { navItems } from '../data/siteContent'
 import { useTheme } from '../hooks/useTheme'
 
 export function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
   const { pathname } = useLocation()
   const { theme, toggleTheme } = useTheme()
 
@@ -16,9 +18,24 @@ export function Header() {
         </span>
       </Link>
 
-      <nav className="nav-pill" aria-label="Navegação principal">
+      <button
+        className={`nav-hamburger ${menuOpen ? 'is-open' : ''}`}
+        type="button"
+        onClick={() => setMenuOpen(o => !o)}
+        aria-label="Menu"
+      >
+        <span /><span /><span />
+      </button>
+
+      <nav className={`nav-pill ${menuOpen ? 'nav-mobile-open' : ''}`} aria-label="Navegação principal">
         {navItems.map((item) => (
-          <Link key={item.href} className={pathname === item.href ? 'active' : ''} to={item.href} data-cursor="action">
+          <Link
+            key={item.href}
+            className={pathname === item.href ? 'active' : ''}
+            to={item.href}
+            onClick={() => setMenuOpen(false)}
+            data-cursor="action"
+          >
             {item.label}
           </Link>
         ))}

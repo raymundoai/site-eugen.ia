@@ -16,40 +16,51 @@ export function ServicesShowcase() {
   const [tabProgress, setTabProgress] = useState(0)
 
   useEffect(() => {
+    const mm = gsap.matchMedia()
     const ctx = gsap.context(() => {
-      // Fase 1: digita + apaga
+      // Fase 1: efeito de digitação apenas no desktop
       const chars = h2Ref.current.querySelectorAll('.tw-char')
-      gsap.fromTo(chars,
-        { opacity: 0 },
-        {
-          opacity: 1,
-          stagger: { each: 0.04, from: 'start' },
-          duration: 0.08,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: textPhaseRef.current,
-            start: 'top top',
-            end: () => `+=${window.innerHeight * 1.6}`,
-            scrub: 1,
+      mm.add('(min-width: 769px)', () => {
+        gsap.fromTo(chars,
+          { opacity: 0 },
+          {
+            opacity: 1,
+            stagger: { each: 0.04, from: 'start' },
+            duration: 0.08,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: textPhaseRef.current,
+              start: 'top top',
+              end: () => `+=${window.innerHeight * 1.6}`,
+              scrub: 1,
+              invalidateOnRefresh: true,
+            },
           },
-        },
-      )
+        )
+      })
 
       // Fase 2: desliza entre serviços
-      ScrollTrigger.create({
-        trigger: cardsPhaseRef.current,
-        start: 'top top',
-        end: 'bottom bottom',
-        scrub: true,
-        onUpdate: (self) => {
-          const next = Math.min(services.length - 1, Math.floor(self.progress * services.length))
-          const segProg = (self.progress * services.length) - next
-          setActive(next)
-          setTabProgress(Math.min(1, segProg))
-        },
+      mm.add('(min-width: 769px)', () => {
+        const cardsScrollTrigger = ScrollTrigger.create({
+          trigger: cardsPhaseRef.current,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: true,
+          onUpdate: (self) => {
+            const next = Math.min(services.length - 1, Math.floor(self.progress * services.length))
+            const segProg = (self.progress * services.length) - next
+            setActive(next)
+            setTabProgress(Math.min(1, segProg))
+          },
+        })
+
+        return () => cardsScrollTrigger.kill()
       })
     })
-    return () => ctx.revert()
+    return () => {
+      mm.revert()
+      ctx.revert()
+    }
   }, [])
 
   return (
@@ -79,7 +90,7 @@ export function ServicesShowcase() {
 
           <div className="showcase-grid">
             <div className="showcase-copy-viewport">
-              <div className="showcase-copy-track" style={{ transform: `translate3d(-${active * 100}%, 0, 0)` }}>
+              <div className="showcase-copy-track showcase-cards-track" style={{ transform: `translate3d(-${active * 100}%, 0, 0)` }}>
                 {services.map((service) => (
                   <article className="service-slide" id={`service-${service.signal}`} key={service.title}>
                     <span className="service-index">{service.signal}</span>
