@@ -162,8 +162,8 @@ export function ProblemSection() {
           />
           <StatCard
             number="95%"
-            text="das organizações que já adotaram IA registraram crescimento de receita, com aumento médio de 31%"
-            source="AWS, agosto 2025 — via About Amazon Brasil"
+            text="das organizações que adotaram IA ainda não conseguiram ter ROI visível nos projetos de implementação"
+            source="TEC.Institute / MIT Technology Review Brasil"
             chart={<Pie3D value={95} />}
           />
         </div>
