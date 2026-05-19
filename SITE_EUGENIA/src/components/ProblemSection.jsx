@@ -150,7 +150,7 @@ export function ProblemSection() {
           />
           <StatCard
             number="70%"
-            text="dos profissionais reconhecem atividades em seu dia a dia que poderiam ser automatizadas por IA"
+            text="dos profissionais reconhecem atividades em seu dia a dia que poderiam ser automatizadas por IA, mas não sabem como fazer"
             source="Abiacom, out/nov 2025 — via TI INSIDE"
             chart={<PeopleChart filled={7} total={10} />}
           />
