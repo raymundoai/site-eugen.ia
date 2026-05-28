@@ -135,7 +135,7 @@ O site anterior tinha um widget de chat frontend-only conectado a um webhook n8n
 Endpoint configurado:
 
 ```env
-VITE_N8N_CHAT_WEBHOOK=https://n8nwebhook.aeraartificial.com.br/webhook/eugenia-chat
+VITE_N8N_CHAT_WEBHOOK=https://n8nwebhook.brewhouseinsumos.com.br/webhook/eugenia-site
 ```
 
 O chat enviava mensagens por `POST` com JSON contendo:
@@ -153,7 +153,7 @@ O chat enviava mensagens por `POST` com JSON contendo:
 O n8n deveria responder com:
 
 - `assistant.message`, texto da resposta da agente;
-- `status`, por exemplo `active`, `scheduled`, `closed` ou `handoff`;
+- `status`, por exemplo `active`, `qualified`, `waitlist`, `closed` ou `handoff`;
 - `lead_updates`, com dados identificados ou atualizados.
 
 A referencia detalhada do contrato com n8n esta em:

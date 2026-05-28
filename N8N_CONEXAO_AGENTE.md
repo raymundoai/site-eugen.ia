@@ -7,14 +7,14 @@ Este documento preserva o contrato funcional entre o futuro site e o webhook n8n
 Use uma variavel de ambiente publica do Vite para configurar o endpoint:
 
 ```env
-VITE_N8N_CHAT_WEBHOOK=https://n8nwebhook.aeraartificial.com.br/webhook/eugenia-chat
+VITE_N8N_CHAT_WEBHOOK=https://n8nwebhook.brewhouseinsumos.com.br/webhook/eugenia-site
 ```
 
 Fallback usado no frontend anterior:
 
 ```js
 const CHAT_WEBHOOK_URL =
-  import.meta.env.VITE_N8N_CHAT_WEBHOOK || 'https://n8nwebhook.aeraartificial.com.br/webhook/eugenia-chat'
+  import.meta.env.VITE_N8N_CHAT_WEBHOOK || 'https://n8nwebhook.brewhouseinsumos.com.br/webhook/eugenia-site'
 ```
 
 ## Requisicao do Frontend
@@ -174,11 +174,13 @@ Contrato recomendado:
 Valores de `status` tratados pelo frontend anterior:
 
 - `active`: conversa em andamento
+- `qualified`: nome, nicho e WhatsApp coletados; seguir pelo WhatsApp
+- `waitlist`: contato registrado para avaliacao posterior
 - `scheduled`: diagnostico agendado
 - `closed`: conversa encerrada
 - `handoff`: encaminhada para atendimento humano
 
-Quando `status` for `scheduled`, `closed` ou `handoff`, a UI pode bloquear novos envios e exibir estado de sucesso.
+Quando `status` for `qualified`, `waitlist`, `scheduled`, `closed` ou `handoff`, a UI pode bloquear novos envios e exibir estado de sucesso.
 
 ## Mensagens Padrao da UI
 
@@ -186,7 +188,7 @@ Mensagens iniciais:
 
 ```txt
 Ola! Eu sou a Eugenia.
-Voce montou esse negocio pra ter liberdade. Me diz qual parte da operacao ainda nao deixa?
+Como posso te chamar?
 ```
 
 Fallback quando `assistant.message` vier vazio:
@@ -210,7 +212,7 @@ Tive um problema de conexao agora. Tente novamente em alguns segundos.
 Sucesso:
 
 ```txt
-Diagnostico agendado com sucesso.
+Contato recebido. A Eugenia chama voce no WhatsApp em instantes.
 ```
 
 Consentimento LGPD:

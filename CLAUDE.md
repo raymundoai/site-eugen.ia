@@ -46,7 +46,7 @@ Flat em `src/components/` — não há subdivisão atoms/molecules/organisms na 
 
 Endpoint configurado via `VITE_N8N_CHAT_WEBHOOK` em `.env.local` (fallback hardcoded no componente).
 
-O n8n responde com `{ assistant: { message }, status, lead_updates }`. Os status `scheduled`, `closed` e `handoff` fecham o formulário.
+O n8n responde com `{ assistant: { message }, status, lead_updates }`. Os status `qualified`, `waitlist`, `scheduled`, `closed` e `handoff` fecham o formulário.
 
 ### Animações
 - **Lenis** (`useLenis`): scroll suave global, `lerp: 0.09`.

@@ -6,7 +6,7 @@ import { buildChatPayload } from '../utils/chatPayload'
 import eugeniaAvatar from '../assets/eugenia.jpg'
 
 const CHAT_WEBHOOK_URL =
-  import.meta.env.VITE_N8N_CHAT_WEBHOOK || 'https://n8nwebhook.aeraartificial.com.br/webhook/eugenia-chat'
+  import.meta.env.VITE_N8N_CHAT_WEBHOOK || 'https://n8nwebhook.brewhouseinsumos.com.br/webhook/eugenia-site'
 
 function createMessage(role, message) {
   return { role, message, at: new Date().toISOString() }
@@ -25,7 +25,7 @@ function ChatPanel({ floating = false, onClose }) {
   const logRef = useRef(null)
   const { sessionId, intent, agentStatus, sending, sendError, consent, lead, conversation, isTyping, introState } =
     chatState
-  const isClosed = ['scheduled', 'closed', 'handoff'].includes(agentStatus)
+  const isClosed = ['scheduled', 'closed', 'handoff', 'qualified', 'waitlist'].includes(agentStatus)
 
   useEffect(() => {
     if (!logRef.current) return
@@ -181,7 +181,7 @@ function ChatPanel({ floating = false, onClose }) {
       </label>
 
       {sendError ? <p className="chat-error">{sendError}</p> : null}
-      {isClosed ? <p className="chat-success">Diagnostico agendado com sucesso.</p> : null}
+      {isClosed ? <p className="chat-success">Contato recebido. A Eugênia chama você no WhatsApp em instantes.</p> : null}
     </section>
   )
 }
