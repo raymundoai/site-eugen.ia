@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { footerColumns } from '../data/siteContent'
+import { useConsent } from '../hooks/useConsent'
 
 function IconLinkedin() {
   return (
@@ -32,6 +33,8 @@ function IconFacebook() {
 const socialIcons = { linkedin: IconLinkedin, instagram: IconInstagram, facebook: IconFacebook }
 
 export function Footer() {
+  const { openPreferences } = useConsent()
+
   return (
     <footer className="site-footer">
       <div className="container footer-grid">
@@ -71,6 +74,14 @@ export function Footer() {
               <p key={item.label}>{item.label}</p>
             )
           )}
+        </div>
+        <div>
+          <h3>Legal</h3>
+          <Link to="/privacidade">Política de Privacidade</Link>
+          <Link to="/cookies">Política de Cookies</Link>
+          <button type="button" className="footer-link-button" onClick={openPreferences}>
+            Preferências de cookies
+          </button>
         </div>
       </div>
       <div className="container footer-bottom">{footerColumns.copyright}</div>

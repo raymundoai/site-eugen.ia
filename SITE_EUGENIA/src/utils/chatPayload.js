@@ -31,6 +31,9 @@ export function buildChatPayload({ sessionId, route, message, lead, conversation
     })),
     intent: intent || 'diagnostico',
     consent_lgpd: Boolean(consent),
+    consent_scope: 'contato_comercial',
+    privacy_notice_version: '2026-05-29',
+    legal_basis: 'procedimentos_preliminares_a_pedido_do_titular',
     channel: 'site',
     widget_variant: widgetVariant || 'embedded',
   }

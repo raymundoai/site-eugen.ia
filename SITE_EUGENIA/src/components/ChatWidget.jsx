@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { MessageCircle, Send, X } from 'lucide-react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useChat } from '../hooks/useChat'
 import { buildChatPayload } from '../utils/chatPayload'
 import eugeniaAvatar from '../assets/eugenia.jpg'
@@ -20,12 +20,13 @@ function getWidgetVariant(floating, pathname) {
 
 function ChatPanel({ floating = false, onClose }) {
   const { pathname } = useLocation()
-  const { chatState, setChatState } = useChat()
+  const { chatState, setChatState, resetChat } = useChat()
   const [input, setInput] = useState('')
   const logRef = useRef(null)
   const { sessionId, intent, agentStatus, sending, sendError, consent, lead, conversation, isTyping, introState } =
     chatState
   const isClosed = ['scheduled', 'closed', 'handoff', 'qualified', 'waitlist'].includes(agentStatus)
+  const chatDisabled = sending || introState !== 'done' || !consent
 
   useEffect(() => {
     if (!logRef.current) return
@@ -54,7 +55,7 @@ function ChatPanel({ floating = false, onClose }) {
   async function handleSubmit(event) {
     event.preventDefault()
     const trimmed = input.trim()
-    if (!trimmed || sending || isClosed) return
+    if (!trimmed || chatDisabled || isClosed) return
 
     const userMessage = createMessage('user', trimmed)
     const nextConversation = [...conversation, userMessage]
@@ -125,11 +126,16 @@ function ChatPanel({ floating = false, onClose }) {
           <MessageCircle size={18} aria-hidden="true" />
           Eugen.IA
         </span>
-        {floating ? (
-          <button type="button" onClick={onClose} aria-label="Fechar chat">
-            <X size={18} aria-hidden="true" />
+        <div className="chat-head__actions">
+          <button type="button" onClick={resetChat} aria-label="Limpar conversa">
+            Limpar
           </button>
-        ) : null}
+          {floating ? (
+            <button type="button" onClick={onClose} aria-label="Fechar chat">
+              <X size={18} aria-hidden="true" />
+            </button>
+          ) : null}
+        </div>
       </div>
 
       <div className="chat-log" ref={logRef} role="log" aria-live="polite">
@@ -162,10 +168,10 @@ function ChatPanel({ floating = false, onClose }) {
             id={floating ? 'chat-floating' : 'chat-embedded'}
             value={input}
             onChange={(event) => setInput(event.target.value)}
-            placeholder="Digite sua mensagem"
-            disabled={sending || introState !== 'done'}
+            placeholder={consent ? 'Digite sua mensagem' : 'Marque o aceite para liberar o chat'}
+            disabled={chatDisabled}
           />
-          <button type="submit" disabled={!input.trim() || sending || introState !== 'done'} aria-label="Enviar">
+          <button type="submit" disabled={!input.trim() || chatDisabled} aria-label="Enviar">
             <Send size={18} aria-hidden="true" />
           </button>
         </form>
@@ -177,8 +183,16 @@ function ChatPanel({ floating = false, onClose }) {
           checked={consent}
           onChange={(event) => setChatState((current) => ({ ...current, consent: event.target.checked }))}
         />
-        <span>Autorizo o armazenamento e uso das informacoes para contato comercial, conforme a LGPD.</span>
+        <span>
+          Aceito receber contato comercial da Eugen.IA a partir desta conversa. Posso revogar depois pelo canal de
+          privacidade.
+        </span>
       </label>
+
+      <p className="chat-privacy-note">
+        Ao enviar uma mensagem, seus dados serão tratados para responder à solicitação e qualificar o atendimento.
+        Consulte a <Link to="/privacidade">Política de Privacidade</Link>.
+      </p>
 
       {sendError ? <p className="chat-error">{sendError}</p> : null}
       {isClosed ? <p className="chat-success">Contato recebido. A Eugênia chama você no WhatsApp em instantes.</p> : null}

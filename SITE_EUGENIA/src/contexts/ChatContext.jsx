@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { ChatContext } from './chatContext'
 const CHAT_STORAGE_KEY = 'eugenia_chat_state'
 
@@ -75,7 +75,12 @@ export function ChatProvider({ children }) {
     window.sessionStorage.setItem(CHAT_STORAGE_KEY, JSON.stringify(persistable(chatState)))
   }, [chatState])
 
-  const value = useMemo(() => ({ chatState, setChatState }), [chatState])
+  const resetChat = useCallback(() => {
+    window.sessionStorage.removeItem(CHAT_STORAGE_KEY)
+    setChatState(createDefaultState())
+  }, [])
+
+  const value = useMemo(() => ({ chatState, setChatState, resetChat }), [chatState, resetChat])
 
   return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>
 }

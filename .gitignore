@@ -4,6 +4,7 @@ dist/
 .env.local
 .DS_Store
 *.log
+TAGS E PIXELS.md
 audit/
 backup/
 SITE_EUGENIA/node_modules/
