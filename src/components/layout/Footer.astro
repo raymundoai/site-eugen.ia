@@ -1,0 +1,47 @@
+---
+// Footer.astro não precisa importar o CSS separado —
+// o CSS co-locado é carregado automaticamente no Astro
+// se usar <style> ou importar diretamente
+---
+
+<footer class="footer">
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+      <img src="/icon/logotipo.png" alt="Eugen.IA" height={32} />
+      <p>
+        Automações e agentes de IA para empresas que querem parar de ser
+        operadas pelos donos e começar a ser construídas por eles.
+      </p>
+    </div>
+
+    <nav class="footer-nav">
+      <span class="footer-nav-label">Navegação</span>
+      <a href="/">Início</a>
+      <a href="/faq">FAQ</a>
+      <a href="/contato">Contato</a>
+    </nav>
+
+    <div class="footer-contact">
+      <span class="footer-nav-label">Contato</span>
+      <a href="mailto:contato@eugenia.ia.br">contato@eugenia.ia.br</a>
+      <a href="tel:+5551991129452">(51) 99112-9452</a>
+      <span class="footer-muted">Atendimento remoto em todo o Brasil.</span>
+    </div>
+
+  </div>
+
+  <div class="container footer-bottom">
+    <div class="footer-legal">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Política de Cookies</a>
+      <a href="#">Preferências de cookies</a>
+    </div>
+    <span class="footer-muted">© 2026 Eugen.IA. Todos os direitos reservados.</span>
+  </div>
+</footer>
+
+<style>
+  /* Importa o Footer.css existente */
+  @import '../layout/Footer.css';
+</style>
