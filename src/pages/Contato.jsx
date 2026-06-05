@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import Tag from '../components/ui/Tag.jsx'
 import Button from '../components/ui/Button.jsx'
 import './PageShared.css'
@@ -6,6 +7,13 @@ import './Contato.css'
 export default function Contato() {
   return (
     <>
+      <Helmet>
+        <title>Contato | Fale com a Eugênia | Eugen.IA</title>
+        <meta
+          name="description"
+          content="Fale com a Eugênia e agende seu Pré-Diagnóstico gratuito. Sem formulário. Sem espera. Sem compromisso."
+        />
+      </Helmet>
       <section className="page-hero section">
         <div className="container">
           <Tag>Contato</Tag>

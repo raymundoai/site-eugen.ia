@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import Tag from '../components/ui/Tag.jsx'
 import Button from '../components/ui/Button.jsx'
 import './PageShared.css'
@@ -37,6 +38,13 @@ export default function Treinamento() {
 
   return (
     <>
+      <Helmet>
+        <title>Workshop de IA para Empresas | Eugen.IA</title>
+        <meta
+          name="description"
+          content="Treinamento in-company sobre uso responsável de LLMs, Shadow AI e política de IA. Para times de até 20 pessoas."
+        />
+      </Helmet>
       <section className="page-hero section">
         <div className="container">
           <Tag>Treinamento in-company</Tag>

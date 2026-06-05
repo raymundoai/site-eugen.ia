@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import Tag from '../components/ui/Tag.jsx'
 import Accordion from '../components/ui/Accordion.jsx'
 import './PageShared.css'
@@ -53,6 +54,13 @@ const faqItems = [
 export default function Faq() {
   return (
     <>
+      <Helmet>
+        <title>Perguntas Frequentes | Eugen.IA</title>
+        <meta
+          name="description"
+          content="Respostas sobre automação, Agentes de IA, investimento, LGPD e como a Eugen.IA trabalha."
+        />
+      </Helmet>
       <section className="page-hero section">
         <div className="container">
           <Tag>Perguntas frequentes</Tag>

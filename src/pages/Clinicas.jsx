@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import Tag from '../components/ui/Tag.jsx'
 import Button from '../components/ui/Button.jsx'
 import './Clinicas.css'
@@ -5,6 +6,13 @@ import './Clinicas.css'
 export default function Clinicas() {
   return (
     <>
+      <Helmet>
+        <title>Agente de Agendamento com IA para Clínicas | Eugen.IA</title>
+        <meta
+          name="description"
+          content="Agente de IA no WhatsApp que agenda, confirma e atende seus clientes 24h por dia. Setup em 2 dias. R$ 1.200."
+        />
+      </Helmet>
       {/* Hero */}
       <section className="page-hero section clinicas-hero">
         <div className="container">

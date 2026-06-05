@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import Tag from '../components/ui/Tag.jsx'
 import './PageShared.css'
 import './Teste.css'
@@ -8,6 +9,13 @@ const GOOGLE_FORMS_URL = 'https://docs.google.com/forms/d/e/PLACEHOLDER/viewform
 export default function Teste() {
   return (
     <>
+      <Helmet>
+        <title>Teste de Maturidade em IA | Eugen.IA</title>
+        <meta
+          name="description"
+          content="3 minutos. Descubra o nível de maturidade da sua operação e as 3 maiores oportunidades de automação. Resultado em 24h."
+        />
+      </Helmet>
       <section className="page-hero section">
         <div className="container">
           <Tag>Diagnóstico gratuito</Tag>
