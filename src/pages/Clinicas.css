@@ -1,0 +1,207 @@
+.page-hero {
+  padding-top: calc(var(--header-height) + var(--space-20));
+}
+
+.page-hero h1 {
+  font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+  font-weight: 700;
+  line-height: 1.15;
+  margin-top: var(--space-4);
+  max-width: 720px;
+}
+
+.clinicas-hero h1 span {
+  color: var(--muted);
+}
+
+.page-hero-sub {
+  font-size: var(--font-size-lg);
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-top: var(--space-4);
+}
+
+.page-hero-actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-top: var(--space-8);
+}
+
+/* Demo */
+.clinicas-demo {
+  max-width: 640px;
+  text-align: center;
+}
+
+.clinicas-demo h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin-bottom: var(--space-4);
+}
+
+.clinicas-demo p {
+  color: var(--muted);
+  margin-bottom: var(--space-8);
+}
+
+.clinicas-demo-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.clinicas-demo-label {
+  font-size: var(--font-size-xs);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.clinicas-demo-number {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Steps */
+.clinicas-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+  max-width: 560px;
+}
+
+.clinicas-step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.clinicas-step-n {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.clinicas-steps-note {
+  margin-top: var(--space-6);
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Preço */
+.clinicas-preco-card {
+  background: var(--surface);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-12);
+  max-width: 560px;
+}
+
+.clinicas-preco-card h2 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-8);
+}
+
+.clinicas-preco-values {
+  display: flex;
+  gap: var(--space-12);
+  margin-bottom: var(--space-8);
+}
+
+.clinicas-preco-label {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-2);
+}
+
+.clinicas-preco-value {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.clinicas-preco-value small {
+  font-size: var(--font-size-base);
+  color: var(--muted);
+}
+
+.clinicas-include-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.clinicas-include-list li::before {
+  content: '✓ ';
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.clinicas-guarantee {
+  font-size: var(--font-size-sm);
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+/* Compliance */
+.clinicas-compliance h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-6);
+  max-width: 480px;
+}
+
+.clinicas-compliance-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 480px;
+}
+
+.clinicas-compliance-list li::before {
+  content: '— ';
+  color: var(--primary);
+}
+
+/* CTA */
+.clinicas-cta {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.clinicas-cta h2 {
+  font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-4xl));
+  font-weight: 700;
+  max-width: 560px;
+}
+
+.clinicas-cta p {
+  color: var(--muted);
+  font-size: var(--font-size-sm);
+}
