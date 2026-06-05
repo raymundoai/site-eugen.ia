@@ -1,0 +1,74 @@
+/* Herói padrão das páginas internas */
+.page-hero {
+  padding-top: calc(var(--header-height) + var(--space-20));
+}
+
+.page-hero h1 {
+  font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+  font-weight: 700;
+  line-height: 1.15;
+  margin-top: var(--space-4);
+  max-width: 720px;
+}
+
+.page-hero h1 span {
+  color: var(--muted);
+}
+
+.page-hero-sub {
+  font-size: var(--font-size-lg);
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-top: var(--space-4);
+}
+
+.page-hero-actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-top: var(--space-8);
+}
+
+/* Preço (consultoria + treinamento) */
+.consultoria-preco {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-8);
+}
+
+.consultoria-preco-value {
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.consultoria-preco-note {
+  font-size: var(--font-size-sm);
+  color: var(--muted);
+}
+
+/* CTA final das páginas internas */
+.consultoria-cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 640px;
+}
+
+.consultoria-cta h2 {
+  font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-4xl));
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.consultoria-cta h2 span {
+  color: var(--muted);
+}
+
+.consultoria-cta p {
+  color: var(--muted);
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+}
