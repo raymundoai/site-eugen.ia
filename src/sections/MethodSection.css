@@ -1,0 +1,69 @@
+.method-heading {
+  font-size: clamp(var(--font-size-3xl), 5vw, var(--font-size-5xl));
+  font-weight: 700;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-16);
+}
+
+.method-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.method-step {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-6);
+  padding: var(--space-8);
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+  background: var(--surface);
+  transition: background 0.2s;
+}
+
+.method-step:last-child {
+  border-bottom: none;
+}
+
+.method-step:hover {
+  background: var(--surface-soft);
+}
+
+.method-step-id {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.method-step-title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: var(--space-2);
+}
+
+.method-step-desc {
+  color: var(--muted);
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+}
+
+.method-footer {
+  margin-top: var(--space-8);
+  color: var(--muted);
+  font-size: var(--font-size-base);
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .method-step {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+}

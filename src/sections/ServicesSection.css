@@ -1,0 +1,71 @@
+.services-heading {
+  font-size: clamp(var(--font-size-2xl), 3.5vw, var(--font-size-3xl));
+  font-weight: 700;
+  line-height: 1.25;
+  max-width: 640px;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-16);
+}
+
+.services-heading span {
+  color: var(--muted);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: border-color 0.2s;
+}
+
+.service-card:hover {
+  border-color: var(--primary);
+}
+
+.service-number {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.1em;
+}
+
+.service-title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.service-subtitle {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.service-description {
+  font-size: var(--font-size-sm);
+  color: var(--muted);
+  line-height: 1.7;
+  flex: 1;
+}
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
