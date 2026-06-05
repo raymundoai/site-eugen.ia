@@ -1,0 +1,53 @@
+.teste-outcomes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  max-width: 800px;
+}
+
+.teste-outcome {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+
+.teste-outcome h3 {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: var(--space-2);
+}
+
+.teste-outcome p {
+  color: var(--muted);
+  font-size: var(--font-size-sm);
+}
+
+.teste-form-container {
+  max-width: 720px;
+}
+
+.teste-form {
+  width: 100%;
+  min-height: 800px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.teste-footer-note {
+  max-width: 560px;
+}
+
+.teste-footer-note p {
+  color: var(--muted);
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .teste-outcomes {
+    grid-template-columns: 1fr;
+  }
+}
