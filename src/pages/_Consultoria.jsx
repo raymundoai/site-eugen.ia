@@ -1,8 +1,7 @@
-import { Helmet } from 'react-helmet-async'
 import Tag from '../components/ui/Tag.jsx'
 import Button from '../components/ui/Button.jsx'
-import './PageShared.css'
-import './ConsultoriaTrainamento.css'
+import './_PageShared.css'
+import './_ConsultoriaTrainamento.css'
 
 export default function Consultoria() {
   const deliverables = [
@@ -46,13 +45,6 @@ export default function Consultoria() {
 
   return (
     <>
-      <Helmet>
-        <title>Consultoria Estratégica em IA | Método 5D | Eugen.IA</title>
-        <meta
-          name="description"
-          content="Diagnóstico, arquitetura e escopo fechado em duas sessões. Entregáveis que garantem autonomia total. R$ 800–900."
-        />
-      </Helmet>
       <section className="page-hero section">
         <div className="container">
           <Tag>Consultoria estratégica</Tag>
