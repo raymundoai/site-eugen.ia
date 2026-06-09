@@ -24,7 +24,7 @@ const previewItems = [
 
 export default function FaqPreviewSection() {
   return (
-    <section className="faq-preview section">
+    <section className="faq-preview section" data-gsap="faq-preview">
       <div className="container faq-preview-inner">
         <Tag>Perguntas frequentes</Tag>
         <h2 className="faq-preview-heading">Dúvidas comuns</h2>

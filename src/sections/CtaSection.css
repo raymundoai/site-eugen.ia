@@ -44,3 +44,13 @@
     padding: var(--space-12) var(--space-8);
   }
 }
+
+/* Glow pulse loop */
+@keyframes cta-glow {
+  0%, 100% { box-shadow: var(--shadow-glass), var(--shadow-glow); }
+  50%       { box-shadow: var(--shadow-glass), var(--shadow-blue); }
+}
+
+.cta-card {
+  animation: cta-glow 4s ease-in-out infinite;
+}

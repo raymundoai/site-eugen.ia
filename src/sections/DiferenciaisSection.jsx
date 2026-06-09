@@ -21,9 +21,9 @@ const diferenciais = [
 
 export default function DiferenciaisSection() {
   return (
-    <section className="diferenciais section">
+    <section className="diferenciais section" data-gsap="diferenciais">
       <div className="container diferenciais-grid">
-        <div className="diferenciais-headline">
+        <div className="diferenciais-headline" data-gsap="diferenciais-headline">
           <h2>
             O que nos diferencia não é a tecnologia.{' '}
             <span>É entender o seu processo.</span>
@@ -32,7 +32,11 @@ export default function DiferenciaisSection() {
 
         <div className="diferenciais-list">
           {diferenciais.map((diferencial) => (
-            <div key={diferencial.title} className="diferencial-item">
+            <div
+              key={diferencial.title}
+              className="diferencial-item"
+              data-gsap="diferencial-item"
+            >
               <h3 className="diferencial-title">{diferencial.title}</h3>
               <p className="diferencial-desc">{diferencial.description}</p>
             </div>

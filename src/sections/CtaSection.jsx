@@ -4,16 +4,16 @@ import './CtaSection.css'
 
 export default function CtaSection() {
   return (
-    <section className="cta-final section">
+    <section className="cta-final section" data-gsap="cta">
       <div className="container">
-        <div className="cta-card">
+        <div className="cta-card glass-card">
           <Tag>Próximo passo</Tag>
           <h2>
             Sua operação pode ser mais leve do que você imagina.{' '}
             <span>Fale com a Eugênia.</span>
           </h2>
           <Button
-            href="https://wa.me/5551991129452"
+            href="https://wa.me/5551991275825"
             target="_blank"
             rel="noopener noreferrer"
             size="lg"
