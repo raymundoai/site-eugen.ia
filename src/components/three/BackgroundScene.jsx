@@ -78,10 +78,9 @@ export default function BackgroundScene() {
       uTheme: { value: document.documentElement.dataset.theme === 'light' ? 1.0 : 0.0 },
     }
 
-    scene.add(new Mesh(
-      new PlaneGeometry(2, 2),
-      new ShaderMaterial({ vertexShader: VERT, fragmentShader: FRAG, uniforms }),
-    ))
+    const geometry = new PlaneGeometry(2, 2)
+    const material = new ShaderMaterial({ vertexShader: VERT, fragmentShader: FRAG, uniforms })
+    scene.add(new Mesh(geometry, material))
 
     let targetMX = 0.5, targetMY = 0.5
     const onMove = (e) => {
@@ -91,7 +90,7 @@ export default function BackgroundScene() {
     window.addEventListener('mousemove', onMove, { passive: true })
 
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    let lastTime = 0, rafId
+    let lastTime = performance.now(), rafId
 
     const tick = (time) => {
       rafId = requestAnimationFrame(tick)
@@ -119,6 +118,9 @@ export default function BackgroundScene() {
       window.removeEventListener('mousemove', onMove)
       window.removeEventListener('resize', onResize)
       themeObs.disconnect()
+      geometry.dispose()
+      material.dispose()
+      registerBackgroundCanvas(null)
       renderer.dispose()
     }
   }, [])
