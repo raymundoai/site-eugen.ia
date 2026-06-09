@@ -1,6 +1,8 @@
 ---
 import Header from '../components/layout/Header.jsx'
 import Footer from '../components/layout/Footer.astro'
+import ChatFloat from '../components/chat/ChatFloat.jsx'
+import CustomCursor from '../components/ui/CustomCursor.jsx'
 import '../styles/global.css'
 
 interface Props {
@@ -19,19 +21,20 @@ const { title, description } = Astro.props
     <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Anti-flash tema: roda antes do render -->
+    <script is:inline>
+      ;(function () {
+        var saved = localStorage.getItem('theme')
+        var system = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+        document.documentElement.dataset.theme = saved || system
+      })()
+    </script>
   </head>
   <body>
     <Header client:load />
@@ -39,21 +42,12 @@ const { title, description } = Astro.props
       <slot />
     </main>
     <Footer />
+    <ChatFloat pathname={Astro.url.pathname} client:load />
+    <CustomCursor client:load />
 
+    <!-- Lenis + GSAP ScrollTrigger (inicializa após DOM) -->
     <script>
-      import Lenis from 'lenis'
-
-      const lenis = new Lenis({
-        lerp: 0.09,
-        smoothWheel: true,
-        wheelMultiplier: 0.9,
-      })
-
-      function tick(time: number) {
-        lenis.raf(time)
-        requestAnimationFrame(tick)
-      }
-      requestAnimationFrame(tick)
+      import '../scripts/animations.js'
     </script>
   </body>
 </html>
