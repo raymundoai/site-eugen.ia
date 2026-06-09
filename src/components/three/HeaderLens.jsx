@@ -58,7 +58,7 @@ export default function HeaderLens() {
 
     let renderer
     try {
-      renderer = new WebGLRenderer({ canvas, alpha: true, antialias: false })
+      renderer = new WebGLRenderer({ canvas, alpha: true, antialias: false, powerPreference: 'low-power' })
     } catch {
       return
     }
@@ -127,6 +127,7 @@ export default function HeaderLens() {
       cancelAnimationFrame(rafId)
       themeObs.disconnect()
       resObs.disconnect()
+      if (texture) texture.dispose()
       geometry.dispose()
       material.dispose()
       renderer.dispose()
