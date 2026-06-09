@@ -8,19 +8,19 @@ export default function Clinicas() {
       {/* Hero */}
       <section className="page-hero section clinicas-hero">
         <div className="container">
-          <Tag>Produto fixo — Agendamento com IA</Tag>
-          <h1>
+          <Tag data-gsap="page-hero-item">Produto fixo — Agendamento com IA</Tag>
+          <h1 data-gsap="page-hero-item">
             Sua clínica perdendo clientes{' '}
             <span>fora do horário comercial?</span>
           </h1>
-          <p className="page-hero-sub">
+          <p className="page-hero-sub" data-gsap="page-hero-item">
             Agente de IA que atende em 3 segundos, consulta a agenda dos seus
             profissionais e fecha o agendamento sozinho. 24 horas por dia,
             7 dias por semana.
           </p>
-          <div className="page-hero-actions">
+          <div className="page-hero-actions" data-gsap="page-hero-item">
             <Button
-              href="https://wa.me/5551991129452"
+              href="https://wa.me/5551991275825"
               target="_blank"
               rel="noopener noreferrer"
               size="lg"
@@ -35,7 +35,7 @@ export default function Clinicas() {
       </section>
 
       {/* Demonstração */}
-      <section className="section">
+      <section className="section" data-gsap="page-section">
         <div className="container clinicas-demo">
           <h2>Veja funcionando antes de decidir</h2>
           <p>
@@ -45,19 +45,19 @@ export default function Clinicas() {
           <div className="clinicas-demo-box">
             <p className="clinicas-demo-label">Número do agente demo</p>
             <a
-              href="https://wa.me/5551991129452"
+              href="https://wa.me/5551991275825"
               target="_blank"
               rel="noopener noreferrer"
               className="clinicas-demo-number"
             >
-              (51) 99112-9452
+              (51) 99127-5825
             </a>
           </div>
         </div>
       </section>
 
       {/* Como funciona */}
-      <section className="section">
+      <section className="section" data-gsap="page-section">
         <div className="container">
           <Tag>Como funciona</Tag>
           <div className="clinicas-steps">
@@ -79,18 +79,18 @@ export default function Clinicas() {
       </section>
 
       {/* Preço */}
-      <section id="preco" className="section">
+      <section id="preco" className="section" data-gsap="page-section">
         <div className="container clinicas-preco">
           <div className="clinicas-preco-card">
             <h2>O que está incluso</h2>
             <div className="clinicas-preco-values">
               <div>
                 <span className="clinicas-preco-label">Setup completo</span>
-                <span className="clinicas-preco-value">R$ 1.200</span>
+                <span className="clinicas-preco-value">R$ 1.400</span>
               </div>
               <div>
                 <span className="clinicas-preco-label">Manutenção mensal</span>
-                <span className="clinicas-preco-value">R$ 200<small>/mês</small></span>
+                <span className="clinicas-preco-value">R$ 350<small>/mês</small></span>
               </div>
             </div>
             <ul className="clinicas-include-list">
@@ -107,7 +107,7 @@ export default function Clinicas() {
       </section>
 
       {/* Compliance */}
-      <section className="section">
+      <section className="section" data-gsap="page-section">
         <div className="container clinicas-compliance">
           <h3>Seguro, rastreável e adequado à LGPD</h3>
           <ul className="clinicas-compliance-list">
@@ -120,11 +120,11 @@ export default function Clinicas() {
       </section>
 
       {/* CTA final */}
-      <section className="section">
+      <section className="section" data-gsap="page-section">
         <div className="container clinicas-cta">
           <h2>Pronto para atender enquanto você dorme?</h2>
           <Button
-            href="https://wa.me/5551991129452"
+            href="https://wa.me/5551991275825"
             target="_blank"
             rel="noopener noreferrer"
             size="lg"

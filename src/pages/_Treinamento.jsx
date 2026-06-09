@@ -39,18 +39,18 @@ export default function Treinamento() {
     <>
       <section className="page-hero section">
         <div className="container">
-          <Tag>Treinamento in-company</Tag>
-          <h1>
+          <Tag data-gsap="page-hero-item">Treinamento in-company</Tag>
+          <h1 data-gsap="page-hero-item">
             Seu time já usa IA. <span>A questão é se usa bem.</span>
           </h1>
-          <p className="page-hero-sub">
+          <p className="page-hero-sub" data-gsap="page-hero-item">
             Workshop de 3-4 horas para times de até 20 pessoas. Uso responsável
             de ChatGPT e Claude, engenharia de prompt aplicada ao trabalho de
             vocês e política de IA para eliminar o Shadow AI.
           </p>
-          <div className="page-hero-actions">
+          <div className="page-hero-actions" data-gsap="page-hero-item">
             <Button
-              href="https://wa.me/5551991129452"
+              href="https://wa.me/5551991275825"
               target="_blank"
               rel="noopener noreferrer"
               size="lg"
@@ -61,7 +61,7 @@ export default function Treinamento() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" data-gsap="page-section">
         <div className="container treinamento-problem">
           <h2>
             Shadow AI está acontecendo <span>na sua empresa agora</span>
@@ -74,7 +74,7 @@ export default function Treinamento() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" data-gsap="page-section">
         <div className="container">
           <h2 className="treinamento-heading">O que cobrimos</h2>
           <div className="treinamento-modules">
@@ -89,7 +89,7 @@ export default function Treinamento() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" data-gsap="page-section">
         <div className="container treinamento-deliverables">
           <h2>O que você leva</h2>
           <ul>
@@ -98,19 +98,19 @@ export default function Treinamento() {
             ))}
           </ul>
           <div className="consultoria-preco">
-            <span className="consultoria-preco-value">R$ 800–900 por turma</span>
+            <span className="consultoria-preco-value">R$ 870 por turma</span>
           </div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" data-gsap="page-section">
         <div className="container consultoria-cta">
           <h2>
             Transforme o uso de IA do seu time{' '}
             <span>de risco em vantagem competitiva.</span>
           </h2>
           <Button
-            href="https://wa.me/5551991129452"
+            href="https://wa.me/5551991275825"
             target="_blank"
             rel="noopener noreferrer"
             size="lg"

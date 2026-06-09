@@ -55,12 +55,12 @@ export default function Faq() {
     <>
       <section className="page-hero section">
         <div className="container">
-          <Tag>Perguntas frequentes</Tag>
-          <h1>Tudo que você precisa saber</h1>
+          <Tag data-gsap="page-hero-item">Perguntas frequentes</Tag>
+          <h1 data-gsap="page-hero-item">Tudo que você precisa saber</h1>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" data-gsap="page-section">
         <div className="container faq-body">
           <Accordion items={faqItems} />
         </div>

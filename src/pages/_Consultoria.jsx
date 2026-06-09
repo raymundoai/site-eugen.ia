@@ -47,16 +47,16 @@ export default function Consultoria() {
     <>
       <section className="page-hero section">
         <div className="container">
-          <Tag>Consultoria estratégica</Tag>
-          <h1>Clareza antes de qualquer ferramenta.</h1>
-          <p className="page-hero-sub">
+          <Tag data-gsap="page-hero-item">Consultoria estratégica</Tag>
+          <h1 data-gsap="page-hero-item">Clareza antes de qualquer ferramenta.</h1>
+          <p className="page-hero-sub" data-gsap="page-hero-item">
             Mapeamos o problema, desenhamos a solução e fechamos o escopo antes
             de desenvolver. Você sai com material suficiente para implementar
             sozinho, se quiser.
           </p>
-          <div className="page-hero-actions">
+          <div className="page-hero-actions" data-gsap="page-hero-item">
             <Button
-              href="https://wa.me/5551991129452"
+              href="https://wa.me/5551991275825"
               target="_blank"
               rel="noopener noreferrer"
               size="lg"
@@ -67,7 +67,7 @@ export default function Consultoria() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" data-gsap="page-section">
         <div className="container">
           <h2 className="consultoria-heading">A Consultoria 5D em dois momentos</h2>
           <div className="consultoria-sessions">
@@ -85,7 +85,7 @@ export default function Consultoria() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" data-gsap="page-section">
         <div className="container">
           <h2 className="consultoria-heading">O que você leva ao final</h2>
           <ul className="consultoria-deliverables">
@@ -102,7 +102,7 @@ export default function Consultoria() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" data-gsap="page-section">
         <div className="container consultoria-cta">
           <h2>Comece pelo Pré-Diagnóstico gratuito</h2>
           <p>
@@ -110,7 +110,7 @@ export default function Consultoria() {
             que não é o momento.
           </p>
           <Button
-            href="https://wa.me/5551991129452"
+            href="https://wa.me/5551991275825"
             target="_blank"
             rel="noopener noreferrer"
             size="lg"
