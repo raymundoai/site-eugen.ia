@@ -43,16 +43,6 @@
   justify-content: center;
 }
 
-.hero-visual-placeholder {
-  width: 100%;
-  aspect-ratio: 1;
-  max-width: 480px;
-  border-radius: var(--radius-lg);
-  background: var(--surface);
-  border: 1px solid var(--line);
-  opacity: 0.4;
-}
-
 .hero-context-bar {
   display: flex;
   align-items: center;
