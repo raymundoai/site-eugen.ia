@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Button from '../ui/Button.jsx'
 import './Header.css'
+import HeaderLens from '../three/HeaderLens.jsx'
 
 function useTheme() {
   const [theme, setTheme] = useState('dark')
@@ -45,6 +46,7 @@ export default function Header() {
 
   return (
     <header className={`header${scrolled ? ' header--condensed' : ''}`}>
+      <HeaderLens />
       <div className={`header-inner${scrolled ? ' header-inner--pill' : ' header-inner--full'}`}>
 
         <a href="/" className="header-logo" onClick={() => setMenuOpen(false)}>
