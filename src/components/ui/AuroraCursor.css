@@ -1,4 +1,4 @@
-@media (pointer: fine) {
+@media (pointer: fine) and (not (prefers-reduced-motion: reduce)) {
   * { cursor: none !important; }
 }
 
