@@ -37,6 +37,8 @@ export default function CustomCursor() {
 
     const bindHoverTargets = () => {
       document.querySelectorAll('a, button, [role="button"], [data-cursor="hover"]').forEach((el) => {
+        if (el.dataset.cursorBound) return
+        el.dataset.cursorBound = '1'
         el.addEventListener('mouseenter', onEnter)
         el.addEventListener('mouseleave', onLeave)
       })
