@@ -269,7 +269,5 @@
   background: rgba(29, 78, 216, 0.06);
 }
 
-/* Contém o HeaderLens canvas e garante z-index correto do conteúdo */
-.header { overflow: hidden; }
+/* Garante z-index correto do conteúdo acima do HeaderLens canvas */
 .header-inner { position: relative; z-index: 1; }
-.header-mobile-menu { position: relative; z-index: 1; }
