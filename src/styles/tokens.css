@@ -1,3 +1,4 @@
+/* src/styles/tokens.css */
 :root {
   /* Layout */
   --header-height: 82px;
@@ -19,12 +20,23 @@
   --primary: #fbba23;
   --accent: #f6c655;
   --danger: #f06367;
-  --glass: #181d259e;
+  --glass: rgba(24, 29, 37, 0.62);
+
+  /* Blue palette */
+  --blue: #2563eb;
+  --blue-mid: #1d4ed8;
+  --blue-deep: #0f1e3d;
+  --blue-glow: rgba(37, 99, 235, 0.28);
+
+  /* Gradients */
+  --gradient-brand: linear-gradient(135deg, #fbba23 0%, #2563eb 100%);
+  --gradient-dark: linear-gradient(160deg, #0f131a 0%, #0f1e3d 100%);
 
   /* Sombras */
-  --shadow-base: 0 16px 42px #060a1229;
-  --shadow-glass: 0 22px 50px #060a1238;
-  --shadow-glow: 0 0 48px #fbba2347;
+  --shadow-base: 0 16px 42px rgba(6, 10, 18, 0.16);
+  --shadow-glass: 0 22px 50px rgba(6, 10, 18, 0.22);
+  --shadow-glow: 0 0 48px rgba(251, 186, 35, 0.28);
+  --shadow-blue: 0 0 48px rgba(37, 99, 235, 0.28);
 
   /* Tipografia */
   --font-sans: 'Inter', system-ui, sans-serif;
@@ -50,4 +62,22 @@
   --space-20: 5rem;
   --space-24: 6rem;
   --space-32: 8rem;
+}
+
+/* Tema light */
+[data-theme="light"] {
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-soft: #f1f5f9;
+  --foreground: #0f1a2e;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --glass: rgba(255, 255, 255, 0.72);
+  --blue: #1d4ed8;
+  --blue-glow: rgba(29, 78, 216, 0.18);
+  --shadow-base: 0 16px 42px rgba(15, 26, 46, 0.08);
+  --shadow-glass: 0 22px 50px rgba(15, 26, 46, 0.10);
+  --shadow-glow: 0 0 48px rgba(251, 186, 35, 0.22);
+  --shadow-blue: 0 0 48px rgba(29, 78, 216, 0.18);
+  --gradient-dark: linear-gradient(160deg, #f8fafc 0%, #e8f0fe 100%);
 }
