@@ -106,6 +106,16 @@
   white-space: nowrap;
 }
 
+/* ponte invisível que cobre o gap entre o trigger e o painel */
+.dropdown-panel::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
 .dropdown-panel a {
   display: block;
   padding: var(--space-2) var(--space-3);
@@ -232,4 +242,29 @@
     max-width: 116px;
     height: auto;
   }
+}
+
+/* Theme toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  transition: color 200ms, border-color 200ms, background 200ms;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--foreground);
+  border-color: var(--blue);
+  background: rgba(37, 99, 235, 0.08);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  background: rgba(29, 78, 216, 0.06);
 }
