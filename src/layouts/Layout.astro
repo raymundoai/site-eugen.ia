@@ -2,7 +2,8 @@
 import Header from '../components/layout/Header.jsx'
 import Footer from '../components/layout/Footer.astro'
 import ChatFloat from '../components/chat/ChatFloat.jsx'
-import CustomCursor from '../components/ui/CustomCursor.jsx'
+import AuroraCursor from '../components/ui/AuroraCursor.jsx'
+import BackgroundScene from '../components/three/BackgroundScene.jsx'
 import '../styles/global.css'
 
 interface Props {
@@ -37,13 +38,14 @@ const { title, description } = Astro.props
     </script>
   </head>
   <body>
+    <BackgroundScene client:load />
+    <AuroraCursor client:load />
     <Header client:load />
     <main>
       <slot />
     </main>
     <Footer />
     <ChatFloat pathname={Astro.url.pathname} client:load />
-    <CustomCursor client:load />
 
     <!-- Lenis + GSAP ScrollTrigger (inicializa após DOM) -->
     <script>
