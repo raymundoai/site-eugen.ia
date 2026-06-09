@@ -53,3 +53,43 @@ button {
   text-transform: uppercase;
   color: var(--primary);
 }
+
+/* Glass utilities */
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-glass);
+}
+
+.glass-border {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: border-color 250ms ease, box-shadow 250ms ease;
+}
+
+.glass-border:hover {
+  border-color: rgba(37, 99, 235, 0.30);
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.12);
+}
+
+[data-theme="light"] .glass-card {
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .glass-border {
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .glass-border:hover {
+  border-color: rgba(29, 78, 216, 0.30);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
