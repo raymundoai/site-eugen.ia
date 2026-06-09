@@ -59,7 +59,8 @@ Componentes exclusivos da home, um por seção: `HeroSection`, `ProblemSection`,
 
 - Bundle total < 400kb gzipped
 - Sem SSR runtime — apenas arquivos estáticos para S3
-- Sem Three.js, Framer Motion, Lottie
+- Three.js: permitido para BackgroundScene e HeaderLens (aprovado para efeitos WebGL)
+- Sem Framer Motion, Lottie
 - GSAP só na Fase 2, importado apenas onde usado
 - Copy preservada fiel ao `plan.md` — não alterar sem instrução explícita
 

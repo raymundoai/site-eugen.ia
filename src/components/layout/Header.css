@@ -268,3 +268,8 @@
 [data-theme="light"] .theme-toggle:hover {
   background: rgba(29, 78, 216, 0.06);
 }
+
+/* Contém o HeaderLens canvas e garante z-index correto do conteúdo */
+.header { overflow: hidden; }
+.header-inner { position: relative; z-index: 1; }
+.header-mobile-menu { position: relative; z-index: 1; }
