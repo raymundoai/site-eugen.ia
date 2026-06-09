@@ -45,17 +45,19 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="services section">
+    <section className="services section" data-gsap="services">
       <div className="container">
         <Tag>O que fazemos</Tag>
         <h2 className="services-heading">
           Mostramos o caminho mais rápido para sua empresa{' '}
           <span>inovar e crescer com Inteligência Artificial.</span>
         </h2>
+      </div>
 
-        <div className="services-grid">
+      <div className="services-scroll-outer" data-gsap="services-outer">
+        <div className="services-track" data-gsap="services-track">
           {services.map((service) => (
-            <div key={service.number} className="service-card">
+            <div key={service.number} className="service-card glass-border">
               <span className="service-number">{service.number}</span>
               <h3 className="service-title">{service.title}</h3>
               <p className="service-subtitle">{service.subtitle}</p>
