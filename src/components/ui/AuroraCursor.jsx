@@ -89,6 +89,7 @@ export default function AuroraCursor() {
       H = window.innerHeight
       canvas.width = W
       canvas.height = H
+      particles.splice(0)
     }
     window.addEventListener('resize', onResize)
 
