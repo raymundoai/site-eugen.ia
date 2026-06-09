@@ -1,0 +1,51 @@
+.neural-svg {
+  width: 100%;
+  max-width: 480px;
+  display: block;
+  opacity: 0.85;
+}
+
+.neural-edge {
+  stroke: var(--blue);
+  stroke-width: 1;
+  opacity: 0.22;
+  stroke-dasharray: 4 14;
+  animation: neural-flow 2.8s linear infinite;
+}
+
+.neural-node {
+  fill: var(--blue);
+  opacity: 0.55;
+  animation: neural-pulse 3.2s ease-in-out infinite alternate;
+}
+
+.neural-node--accent {
+  fill: var(--primary);
+  opacity: 0.9;
+  animation: neural-pulse-accent 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes neural-flow {
+  to {
+    stroke-dashoffset: -18;
+  }
+}
+
+@keyframes neural-pulse {
+  from { opacity: 0.35; }
+  to   { opacity: 0.72; }
+}
+
+@keyframes neural-pulse-accent {
+  from { opacity: 0.70; }
+  to   { opacity: 1; }
+}
+
+[data-theme="light"] .neural-edge {
+  stroke: var(--blue);
+  opacity: 0.18;
+}
+
+[data-theme="light"] .neural-node {
+  opacity: 0.50;
+}
