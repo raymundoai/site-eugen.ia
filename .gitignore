@@ -1,4 +1,10 @@
 node_modules
 dist
+.astro
+.claude
+.playwright-mcp
+.agents
+.codex
 .DS_Store
 *.local
+site_eugenia_old/

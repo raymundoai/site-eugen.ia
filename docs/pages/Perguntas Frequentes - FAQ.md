@@ -1,0 +1,33 @@
+- **Posição: Pergunta 1**
+    - **Pergunta:** `Quem é a Eugen.IA?`
+    - **Resposta:** `Somos uma empresa de Engenharia Operacional especializada em projetar ecossistemas de automação e Agentes de IA sob medida para Prestadores de Serviços (como escritórios de advocacia, clínicas de saúde e consultorias). O nome carrega nossa filosofia: a união entre o "Eu" (o talento humano) e a "Gen IA" (Inteligência Artificial Generativa) para potencializar o seu negócio.`
+- **Posição: Pergunta 2**
+    - **Pergunta:** `Qual o investimento para implementar os sistemas?`
+    - **Resposta:** `Trabalhamos com o modelo Done-For-You (feito para você), dividindo o investimento em duas etapas: um valor único de Setup para a engenharia e implantação da arquitetura (como nosso Gerador Automático de Contratos), e uma mensalidade de manutenção para suporte das APIs, monitoramento de servidores e refinamento contínuo do(s) Agente(s) de IA. Os valores exatos dependem da complexidade da sua operação e são apresentados logo após a sua Sessão de Diagnóstico.`
+- **Posição: Pergunta 3**
+    - **Pergunta:** `A Inteligência Artificial vai substituir a minha equipe?`
+    - **Resposta:** `Absolutamente não (A não ser que você queira, mas recomendamos substituir apenas quem não deseja trabalhar). Nosso objetivo é substituir as tarefas robóticas e invisíveis que sobrecarregam sua recepção e seu backoffice, e não as pessoas. A IA assume o trabalho repetitivo — como preencher contratos e confirmar agendas — para devolver o tempo técnico da sua equipe para o que realmente gera faturamento: decisão, relacionamento e vendas.`
+- **Posição: Pergunta 4**
+    - **Pergunta:** `Não vou perder o controle da minha empresa ao automatizar os processos?`
+    - **Resposta:** `Pelo contrário, você ganha controle gerencial. Processos manuais são invisíveis e propensos a falhas humanas. Os ecossistemas que construímos são 100% rastreáveis, previsíveis e auditáveis. Você terá total visibilidade sobre cada lead, contrato ou agendamento através de uma central de atendimento limpa e intuitiva.`
+- **Posição: Pergunta 5**
+    - **Pergunta:** `E se eu não tiver tempo agora para implementar uma tecnologia nova?`
+    - **Resposta:** `Nossos sistemas foram desenhados justamente para quem está sem tempo. O modelo é Done-For-You: nós fazemos toda a engenharia pesada por trás dos panos. Sua única dedicação será uma chamada inicial de 30 minutos (Sessão de Diagnóstico) para nos mostrar seus gargalos. Nós mapeamos, construímos, integramos e entregamos tudo pronto e testado para a sua equipe usar.`
+- **Posição: Pergunta 6**
+    - **Pergunta:** `Minha operação é muito específica. Existe solução de prateleira para o meu caso?`
+    - **Resposta:** `Não trabalhamos com soluções genéricas de prateleira, porque sabemos que não existe Inteligência Artificial plug-and-play. Cada projeto da Eugen.IA começa com o mapeamento da sua rotina atual. Desenhamos a arquitetura da IA para se moldar ao seu processo e aos sistemas que você já utiliza hoje — e não o contrário.`
+- **Posição: Pergunta 7**
+    - **Pergunta:** `Já investi em chatbots ou automações antes e não tive retorno. Por que aqui seria diferente?`
+    - **Resposta:** `Porque a maioria das ferramentas baratas do mercado vende apenas um robô engessado de mensagens que irrita o cliente e não resolve o seu backoffice. Na Eugen.IA, nós aplicamos o Método 5D de engenharia. Começamos pelo diagnóstico e pelo desenho do fluxo de dados antes de mover uma única linha de código, garantindo que o sistema traga retorno financeiro e paz operacional desde o primeiro dia.`
+- **Posição: Pergunta 8**
+    - **Pergunta:** `Minha empresa não tem equipe técnica. Como vamos gerenciar os robôs?`
+    - **Resposta:** `Você não precisa entender de códigos, prompts ou APIs. Entregamos a solução 100% instalada, configurada e integrada. Além disso, nossa mensalidade cobre toda a manutenção e suporte técnico do sistema para você nunca se preocupar.`
+- **Posição: Pergunta 9**
+    - **Pergunta:** `Como funciona a segurança dos dados da minha empresa e dos meus clientes?`
+    - **Resposta:** `Segurança e conformidade são prioridades na nossa engenharia. Operamos em estrita conformidade com a LGPD. Os dados e históricos de atendimento rodam em servidores dedicados e seguros, integrados diretamente aos seus sistemas atuais via API. Nossos agentes de IA sempre se identificam como assistentes virtuais na primeira interação, mantendo total transparência.`
+- **Posição: Pergunta 10**
+    - **Pergunta:** `Vocês atendem apenas no Rio Grande do Sul?`
+    - **Resposta:** `Atendemos de forma focada toda a Região Sul (RS, SC e PR) e prestadores de serviços de todo o Brasil através de atendimento e implantação 100% remotos, utilizando salas de reunião virtuais e suporte dedicado online.`
+- **Posição: Pergunta 11**
+	- **Pergunta:** `O Agente consegue encaminhar o atendimento para um humano se necessário?`
+	- **Resposta:** `Sim, sempre que necessário, o Agente consegue acionar o atendimento humano para que sua equipe continue pelo próprio CRM ou Whatsapp, sem necessidade de encaminhar para outro número ou alternar entre sistemas.`
