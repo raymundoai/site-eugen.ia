@@ -629,6 +629,30 @@ h3 {
   text-align: center;
 }
 
+.schedule-section {
+  scroll-margin-top: 110px;
+}
+
+.schedule-embed {
+  width: min(1060px, 100%);
+  margin-inline: auto;
+  padding: 40px clamp(20px, 4vw, 48px) 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 84%, transparent);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.schedule-heading {
+  margin-bottom: 20px;
+}
+
+.schedule-widget {
+  width: 100%;
+  height: 650px;
+}
+
 .about-profile {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 390px);
@@ -1060,6 +1084,18 @@ h3 {
     grid-column: auto;
   }
 
+  .schedule-embed {
+    padding-top: 28px;
+  }
+
+  .schedule-heading {
+    margin-bottom: 16px;
+  }
+
+  .schedule-widget {
+    height: 600px;
+  }
+
   .site-footer {
     align-items: flex-start;
     grid-template-columns: 1fr;
@@ -1186,6 +1222,10 @@ h3 {
 
   .slogan {
     padding-block: 24px;
+  }
+
+  .schedule-widget {
+    height: 620px;
   }
 
   .process-carousel,

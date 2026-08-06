@@ -8,6 +8,9 @@
     const next = root.dataset.theme === "light" ? "dark" : "light";
     root.dataset.theme = next;
     localStorage.setItem("eugenia-theme", next);
+    // Re-renderiza o widget de agendamento (Cal.com) no novo tema — a carga inicial dele
+    // já usa o tema certo (window.eugeniaRenderCal, chamado no próprio snippet do Cal).
+    window.eugeniaRenderCal?.(next);
   });
 
   const navToggle = document.querySelector("[data-nav-toggle]");
@@ -38,7 +41,8 @@
     "de Prestadores de Serviços": "of Service Providers",
     "com Inteligência": "with Intelligence",
     "Automações e Agentes de IA que eliminam o trabalho manual do seu atendimento e backoffice. Reduza custos, automatize processos e multiplique a eficiência da sua equipe.": "AI automations and agents that eliminate manual work from your support and back office. Reduce costs, automate processes and multiply your team's efficiency.",
-    "Ver como funciona": "See how it works",
+    "Agendar diagnóstico": "Book a diagnostic call",
+    "Agendar diagnóstico gratuito": "Book a free diagnostic call",
     "MAIS TEMPO CONSTRUINDO": "MORE TIME BUILDING",
     "MENOS TEMPO OPERANDO": "LESS TIME OPERATING",
     "O que fazemos": "What we do",
@@ -50,7 +54,9 @@
     "Lembretes e notificações automáticas via Whatsapp, e-mail e SMS.": "Automatic reminders and notifications via WhatsApp, email and SMS.",
     "Geração automática de contratos, NFs, documentos e propostas.": "Automatic generation of contracts, invoices, documents and proposals.",
     "Onboarding automatizado para novos clientes.": "Automated onboarding for new clients.",
-    "Ver funcionando na prática": "See it working in practice",
+    "Diagnóstico gratuito": "Free diagnostic",
+    "Agende 30 minutos comigo.": "Book 30 minutes with me.",
+    "Sem robô, sem enrolação: uma conversa ao vivo comigo pra mapear onde a IA encaixa na sua operação, sem custo e sem compromisso.": "No bot, no fluff: a live conversation with me to map out where AI fits your operation, free and with no commitment.",
     "Não existe Inteligência Artificial": "There is no",
     "“plug-and-play”.": "plug-and-play Artificial Intelligence.",
     "E esse é o motivo pelo qual muitos empresários não estão tendo resultado com Inteligência Artificial.": "And this is why many business owners are not getting results with Artificial Intelligence.",
